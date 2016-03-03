@@ -1,0 +1,10 @@
+"01. Disk duplication"@@@
+@"01.01. Write blocker hardware"@@"[* Host *] eSata Firewire SATA USB [* Source *] Firewire Flash media IDE Others SAS SATA SCSI USB "
+@"01.02. Write blocker software"@@
+@"01.03. Disk imaging hardware"@@"[* Data encryption *] True [* Duplication Disk to Disk *] True [* Duplication Disk to File *] True [* Hash algorithm *] MD5 SHA-1 SHA-2 SHA-256 [* Log file *] True [* Output type format *] E01 EX01 IQ raw DD [* Source *] Firewire IDE Others SATA SCSI USB [* Supported file system *] exFAT ext2 ext4 FAT FAT32 NTFS [* Type destination *] SATA USB "
+@"01.04. Disk imaging software"@@"[* Imaging type *] Disk Imaging Live CD/USB "
+@"01.05. Disk wiping"@@
+"02. Network"@@@"[* Acquisition type *] IDS Network Forensics Suite Network Proxy Network Traffic Acquisition WiFi Network "
+"03. Mobile device"@@@"[* Function *] Backup Tool Data Recovery Device Browsing Tool Forensic Tool Screen Capture [* Supported device *] Android Apple Blackberry Chinese Others SatNav SIM Symbian Windows Phone "
+"04. Live acquisition"@@@"[* Type *] Autoruns Clipboard Computer Activity Computer Information Driver Encryption Detector Hardware Information Hardware RAM Acquisition Incident Response Toolkit Live Analysis Toolkit Live Forensics Toolkit Network Activities Open files OS Configuration Process Activities Process Dumper RAM Acquisition Recent Activities Services "
+"05. Internet/Cloud"@@@"[* Cloud *] Box Dropbox Google Drive iCloud OneDrive Other [* Social Network *] Facebook Instagram Linkedin Twitter YouTube [* Type *] Mail Web Page "

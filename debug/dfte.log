@@ -1,0 +1,274 @@
+20160125 - 1816 - sendEmailCommittee, toolName=Audit, user=, operation=
+20160125 - 1825 - before sendEmailCommittee, user=fabrizio, EditingType=U
+20160125 - 1825 - sendEmailCommittee, toolName=OSX Plist Parser, user=fabrizio, operation=U
+20160125 - 1825 - sendEmailApproval, toolName=, user=fabrizio.turchi@gmail.com,  operation=U
+20160125 - 1845 - before sendEmailCommittee, user=fabrizio, EditingType=U
+20160125 - 1845 - sendEmailCommittee, toolName=Audit, user=fabrizio, operation=U
+20160125 - 1846 - sendEmailApproval, toolName=Audit pdsapjsas, user=Array,  operation=U
+20160125 - 1847 - before sendEmailCommittee, user=fabrizio, EditingType=U
+20160125 - 1847 - sendEmailCommittee, toolName=iParser, user=fabrizio, operation=U
+20160125 - 1855 - before sendEmailCommittee, user=delfinofabri, EditingType=U
+20160125 - 1855 - sendEmailCommittee, toolName=Alien Registry Viewer, user=delfinofabri, operation=U
+20160125 - 1857 - sendEmailApproval, toolName=Alien Registry Viewer ALIENO!, user=fabrizio.turchi@ittig.cnr.it,  operation=U
+20160125 - 1902 - before sendEmailCommittee, user=delfinofabri, EditingType=U
+20160125 - 1902 - sendEmailCommittee, toolName=Find Any File, user=delfinofabri, operation=U
+20160125 - 1903 - sendEmailApproval, toolName=Find Any File TRC, user=fabrizio.turchi@ittig.cnr.it,  operation=U
+20160125 - 1910 - sendEmailCommittee, toolName=EasyFind, user=delfinofabri, operation=U
+20160125 - 1911 - IdEditorTool=17
+20160125 - 1911 - sendEmailApproval, toolName=EasyFind PIPPO, user=fabrizio.turchi@gmail.com,  operation=U
+20160125 - 1914 - sendEmailCommittee, toolName=Alien Registry Viewer, user=delfinofabri, operation=U
+20160125 - 1915 - IdEditorTool=19, rowEditorTool[IdEditorTool=19
+20160125 - 1915 - sendEmailApproval, toolName=Alien Registry Viewer PLUTO, user=fabrizio.turchi@gmail.com,  operation=U
+20160125 - 1920 - sendEmailCommittee, toolName=Office Plist Parser, user=delfinofabri, operation=U
+20160125 - 1921 - sendEmailCommittee, toolName=Spotlight Inspector, user=delfinofabri, operation=U
+20160125 - 1921 - sendEmailApproval, toolName=Office Plist Parser PAPERINO!, user=fabrizio.turchi@gmail.com,  operation=U
+20160126 - 0827 - SELECT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Url, Category, tblCategories.CodeCategory FROM tblTools, tblCategories, tblToolsCategories WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory AND tblToolsCategories.Process="AN" AND tblCategories.Process = "AN" AND tblTools.IdTool=1075
+20160126 - 0929 - SELECT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Url, Category, tblCategories.CodeCategory FROM tblTools, tblCategories, tblToolsCategories WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory AND tblToolsCategories.Process="AN" AND tblCategories.Process = "AN" AND tblTools.IdTool=142
+20160126 - 0932 - selected CodeCategory=07.01.
+20160126 - 0932 - SELECT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Url, Category, tblCategories.CodeCategory FROM tblTools, tblCategories, tblToolsCategories WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory AND tblToolsCategories.Process="AN" AND tblCategories.Process = "AN" AND tblTools.IdTool=142
+20160126 - 0936 - SELECT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Url, Category, tblCategories.CodeCategory FROM tblTools, tblCategories, tblToolsCategories WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory AND tblToolsCategories.Process="AN" AND tblCategories.Process = "AN" AND tblTools.IdTool=142 AND tblCategories.CodeCategory='07.01.'
+20160126 - 1020 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=142 AND CodeCategory <>"07.01."
+20160126 - 1020 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=142 AND CodeCategory <>"07.01."
+20160126 - 1020 - bannedValues=01.02.02.@
+20160126 - 1033 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=142 AND CodeCategory <>"07.01."
+20160126 - 1033 - bannedValues=01.02.02.@
+20160126 - 1033 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=142 AND CodeCategory <>"07.01."
+20160126 - 1033 - bannedValues=01.02.02.@
+20160126 - 1035 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=142 AND CodeCategory <>"07.01."
+20160126 - 1035 - bannedValues=01.02.02.@
+20160126 - 1040 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=142 AND CodeCategory <>"07.01."
+20160126 - 1040 - bannedValues=01.02.02.@
+20160126 - 1123 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=142 AND CodeCategory <>"07.01."
+20160126 - 1123 - bannedValues=01.02.02.@
+20160126 - 1631 - bannedValues=
+20160126 - 1631 - bannedValues=
+20160126 - 1631 - bannedValues=
+20160126 - 1631 - bannedValues=
+20160126 - 1632 - bannedValues=
+20160126 - 1639 - bannedValues=
+20160126 - 1640 - bannedValues=
+20160126 - 1643 - bannedValues=
+20160126 - 1643 - bannedValues=
+20160126 - 1643 - bannedValues=
+20160127 - 1158 - bannedValues=
+20160209 - 1013 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160209 - 1013 - bannedValues=
+20160209 - 1013 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160209 - 1013 - bannedValues=
+20160212 - 1428 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=1264 AND CodeCategory <>"01.03."
+20160212 - 1428 - bannedValues=
+20160212 - 1439 - bannedValues=
+20160212 - 1439 - bannedValues=
+20160212 - 1450 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=1 AND CodeCategory <>"01.01."
+20160212 - 1450 - bannedValues=
+20160212 - 1453 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=15 AND CodeCategory <>"01.01."
+20160212 - 1453 - bannedValues=
+20160212 - 1457 - bannedValues=
+20160212 - 1511 - bannedValues=
+20160215 - 0934 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 0934 - bannedValues=
+20160215 - 1027 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1027 - bannedValues=
+20160215 - 1213 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1213 - bannedValues=
+20160215 - 1216 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1216 - bannedValues=
+20160215 - 1217 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1217 - bannedValues=
+20160215 - 1220 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1220 - bannedValues=
+20160215 - 1222 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1222 - bannedValues=
+20160215 - 1223 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1223 - bannedValues=
+20160215 - 1224 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1224 - bannedValues=
+20160215 - 1229 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1229 - bannedValues=
+20160215 - 1230 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1230 - bannedValues=
+20160215 - 1230 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1230 - bannedValues=
+20160215 - 1230 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1230 - bannedValues=
+20160215 - 1324 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1324 - bannedValues=
+20160215 - 1326 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1326 - bannedValues=
+20160215 - 1327 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1327 - bannedValues=
+20160215 - 1329 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1329 - bannedValues=
+20160215 - 1354 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1354 - bannedValues=
+20160215 - 1359 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1359 - bannedValues=
+20160215 - 1400 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1400 - bannedValues=
+20160215 - 1403 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1403 - bannedValues=
+20160215 - 1547 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1547 - bannedValues=
+20160215 - 1547 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1547 - bannedValues=
+20160215 - 1616 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1616 - bannedValues=
+20160215 - 1617 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1617 - bannedValues=
+20160215 - 1618 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1618 - bannedValues=
+20160215 - 1618 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1618 - bannedValues=
+20160215 - 1620 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1620 - bannedValues=
+20160215 - 1620 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1620 - bannedValues=
+20160215 - 1621 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160215 - 1621 - bannedValues=
+20160216 - 1605 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160216 - 1605 - bannedValues=
+20160216 - 1609 - bannedValues=
+20160216 - 1619 - bannedValues=
+20160216 - 1620 - bannedValues=
+20160216 - 1622 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160216 - 1622 - bannedValues=
+20160216 - 1659 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160216 - 1659 - bannedValues=
+20160216 - 1701 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160216 - 1701 - bannedValues=
+20160216 - 1702 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160216 - 1702 - bannedValues=
+20160216 - 1703 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160216 - 1703 - bannedValues=
+20160216 - 1703 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160216 - 1703 - bannedValues=
+20160216 - 1704 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160216 - 1704 - bannedValues=
+20160216 - 1704 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160216 - 1704 - bannedValues=
+20160216 - 1719 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160216 - 1719 - bannedValues=
+20160216 - 1929 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160216 - 1929 - bannedValues=
+20160216 - 2027 - sendEmailCommittee, toolName=Audit, user=fabrizio, operation=U
+20160216 - 2027 - bannedValues=
+20160216 - 2029 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160216 - 2029 - bannedValues=
+20160216 - 2046 - tool name sanitized: Audit fabri
+20160216 - 2046 - sendEmailCommittee, toolName=Audit, user=fabrizio, operation=U
+20160216 - 2046 - bannedValues=
+20160217 - 1056 - editorToolName=Audit Fabri
+20160217 - 1056 - editorDeveloper=Fabri and open source community
+20160217 - 1056 - editorUrl=https://github.com/twocanoes/audit
+20160217 - 1056 - Description=Il comando cherry-pick applica i cambiamenti introdotti da un commit in un altro punto del repository. Vediamolo con un esempio, a partire dal master creiamo il branch dev, aggiungiamo dei file e facciamone il commit. Poi partire da questo il branch creiamo un altro branch experiment e facciamo un commit. La situazione corrente e&#768; illustrata in figura
+20160217 - 1436 - qryReferences=SELECT * FROM tblToolsUsefulReferences WHERE IdTool=142
+20160217 - 1437 - qryReferences=SELECT * FROM tblEditorToolsUsefulReferences WHERE IdEditorTool=4
+20160217 - 1447 - qryReferences=SELECT * FROM tblToolsUsefulReferences WHERE IdTool=137
+20160217 - 1448 - references=Array
+20160217 - 1449 - qryReferences=SELECT * FROM tblEditorToolsUsefulReferences WHERE IdEditorTool=4
+20160217 - 1450 - qryReferences=SELECT * FROM tblToolsUsefulReferences WHERE IdTool=135
+20160217 - 1450 - qryReferences=SELECT * FROM tblToolsUsefulReferences WHERE IdTool=133
+20160217 - 1451 - references=
+20160217 - 1451 - qryReferences=SELECT * FROM tblEditorToolsUsefulReferences WHERE IdEditorTool=5
+20160217 - 1505 - qryReferences=SELECT * FROM tblToolsUsefulReferences WHERE IdTool=142
+20160217 - 1506 - references=tizio.org|tizio tizio@
+20160217 - 1506 - qryReferences=SELECT * FROM tblEditorToolsUsefulReferences WHERE IdEditorTool=6
+20160217 - 1512 - qryEvaluations=SELECT * FROM tblToolsEvaluations WHERE IdTool=143 AND EvaluationUserName='fabrizio' 
+20160217 - 1512 - qryEvaluations=SELECT * FROM tblToolsEvaluations WHERE IdTool=7 AND EvaluationUserName='fabrizio' 
+20160217 - 1533 - qryEvaluations=SELECT * FROM tblToolsEvaluations WHERE IdTool=141 AND EvaluationUserName='fabrizio' 
+20160217 - 1535 - qryEvaluations=SELECT * FROM tblToolsEvaluations WHERE IdTool=133 AND EvaluationUserName='fabrizio' 
+20160217 - 1536 - qryEvaluations=SELECT * FROM tblToolsEvaluations WHERE IdTool=133 AND EvaluationUserName='fabrizio' 
+20160217 - 1536 - qryEvaluations=SELECT * FROM tblToolsEvaluations WHERE IdTool=130 AND EvaluationUserName='fabrizio' 
+20160217 - 1537 - qryEvaluations=SELECT * FROM tblToolsEvaluations WHERE IdTool=130 AND EvaluationUserName='fabrizio' 
+20160217 - 1544 - qryEvaluations=SELECT * FROM tblToolsEvaluations WHERE IdTool=142 AND EvaluationUserName='fabrizio' 
+20160217 - 1545 - qryEvaluations=SELECT * FROM tblToolsEvaluations WHERE IdTool=142 AND EvaluationUserName='fabrizio' 
+20160217 - 1546 - qryEvaluations=SELECT * FROM tblToolsEvaluations WHERE IdTool=142 AND EvaluationUserName='fabrizio' 
+20160217 - 1550 - qryEvaluations=SELECT * FROM tblToolsEvaluations WHERE IdTool=0 AND EvaluationUserName='fabrizio' 
+20160217 - 1555 - qryEvaluations=SELECT * FROM tblToolsEvaluations WHERE IdTool=5 AND EvaluationUserName='fabrizio' 
+20160217 - 1608 - qryEvaluations=SELECT * FROM tblToolsEvaluations WHERE IdTool=0 AND EvaluationUserName='fabrizio' 
+20160217 - 1609 - qryEvaluations=SELECT * FROM tblToolsEvaluations WHERE IdTool=0 AND EvaluationUserName='fabrizio' 
+20160217 - 1611 - qryEvaluations=SELECT * FROM tblToolsEvaluations WHERE IdTool=0 AND EvaluationUserName='fabrizio' 
+20160217 - 1612 - qryEvaluation=SELECT * FROM tblToolsEvaluations WHERE IdTool=0 AND EvaluationUserName='fabrizio'
+20160217 - 1612 - qryEvaluations=SELECT * FROM tblToolsEvaluations WHERE IdTool=6 AND EvaluationUserName='fabrizio' 
+20160217 - 1615 - qryEvaluations=SELECT * FROM tblToolsEvaluations WHERE IdTool=0 AND EvaluationUserName='fabrizio' 
+20160217 - 1616 - qryEvaluation=SELECT * FROM tblToolsEvaluations WHERE IdTool=0 AND EvaluationUserName='fabrizio'
+20160217 - 1616 - nEvaluations=1
+20160217 - 1616 - qryEvaluations=SELECT * FROM tblToolsEvaluations WHERE IdTool=7 AND EvaluationUserName='fabrizio' 
+20160217 - 1622 - qryEvaluations=SELECT * FROM tblToolsEvaluations WHERE IdTool=0 AND EvaluationUserName='fabrizio' 
+20160217 - 1623 - qryInsert=INSERT INTO tblToolsEvaluations (IdTool, Satisfaction, FrequencyUse, Process, EvaluationUserName, EvaluationDate, EvaluationTime) VALUES (8, 6, 5, 'AN', 'fabrizio', '20160217', '1623')
+20160217 - 1623 - qryEvaluations=SELECT * FROM tblToolsEvaluations WHERE IdTool=8 AND EvaluationUserName='fabrizio' 
+20160217 - 1628 - qryEvaluations=SELECT * FROM tblToolsEvaluations WHERE IdTool=0 AND EvaluationUserName='fabrizio' 
+20160217 - 1629 - qryEvaluations=SELECT * FROM tblToolsEvaluations WHERE IdTool=142 AND EvaluationUserName='fabrizio' 
+20160217 - 1634 - editorReportsValues=fabri.it|fabri fabri@
+20160217 - 1638 - editorReportsValues=fff.it|ffffsd@
+20160217 - 1644 - editorReportsValues=fabri.it|fabri fabri@
+20160217 - 1646 - editorReportsValues=fabri.it|fabri fabri@
+20160217 - 1646 - cmd=/Users/fabrizio/Documents/ittig/evidence/wp4/dft.catalogue/dfte.send.mail.ssl.py fasfa fabrizio fabrizio.turchi@ittig.cnr.it I
+20160217 - 1722 - editorReportsValues=
+20160217 - 1722 - cmd=/Users/fabrizio/Documents/ittig/evidence/wp4/dft.catalogue/dfte.send.mail.ssl.py Chainbreaker fabrizio fabrizio.turchi@ittig.cnr.it U
+20160218 - 1003 - editorReportsValues=fabri.it|fabri fabri@
+20160218 - 1003 - cmd=/Users/fabrizio/Documents/ittig/evidence/wp4/dft.catalogue/dfte.send.mail.ssl.py tracktrack fabrizio fabrizio.turchi@ittig.cnr.it I
+20160218 - 1455 - cmd=/Users/fabrizio/Documents/ittig/evidence/wp4/dft.catalogue/dfte.send.mail.ssl.py Spotlight Inspector fabrizio fabrizio.turchi@ittig.cnr.it U
+20160218 - 1456 - cmd=/Users/fabrizio/Documents/ittig/evidence/wp4/dft.catalogue/dfte.send.mail.ssl.py "Office Plist Parser" fabrizio fabrizio.turchi@ittig.cnr.it U
+20160219 - 1533 - Send verification email - begining
+20160219 - 1926 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=197 AND CodeCategory <>"01.03.03."
+20160219 - 1946 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=34 AND CodeCategory <>"03."
+20160220 - 1329 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02."
+20160220 - 1332 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=36 AND CodeCategory <>"01.02.01."
+20160220 - 1333 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=36 AND CodeCategory <>"01.03.02."
+20160220 - 1333 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=36 AND CodeCategory <>"01.03.02."
+20160221 - 1928 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=142 AND CodeCategory <>"01.02.02."
+20160221 - 1938 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=130 AND CodeCategory <>"01.02.02."
+20160221 - 1942 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=133 AND CodeCategory <>"01.02.02."
+20160221 - 1942 - /Users/fabrizio/Documents/ittig/evidence/wp4/dft.catalogue/dfte.send.mail.ssl.py "iParser" delfinofabri fabrizio.turchi@gmail.com U ', '
+20160221 - 1944 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=141 AND CodeCategory <>"01.02.02."
+20160221 - 1944 - /Users/fabrizio/Documents/ittig/evidence/wp4/dft.catalogue/dfte.send.mail.ssl.py "OSX Plist Parser" delfinofabri fabrizio.turchi@gmail.com U 'fabrizio.turchi@ittig.cnr.it, giuseppina.sabato@ittig.cnr.it'
+20160221 - 1948 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=199 AND CodeCategory <>"01.03.03."
+20160221 - 1949 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=199 AND CodeCategory <>"01.03.03."
+20160221 - 1949 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=199 AND CodeCategory <>"01.03.03."
+20160221 - 1949 - /Users/fabrizio/Documents/ittig/evidence/wp4/dft.catalogue/dfte.send.mail.ssl.py "Dropbox Decryptor" delfinofabri fabrizio.turchi@gmail.com U 'fabrizio.turchi@ittig.cnr.it, giuseppina.sabato@ittig.cnr.it'
+20160221 - 2257 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=178 AND CodeCategory <>"01.03.02."
+20160222 - 0950 - update tblTools: UPDATE tblTools SET Tool=:Tool, LicenseType=:LicenseType, OperatingSystem=:OperatingSystem, Developer=:Developer, Url=:Url, DateInsert=:DateInsert, TestReport=:TestReport, Process=:Process, Description=:Description, Provenance=:Provenance WHERE IdTool=:IdTool
+20160222 - 1012 - Prima della commit
+20160222 - 1012 - Dopo la commit
+20160222 - 1023 - rowEditorTool=Array
+20160222 - 1025 - IdEditorTool=20, Tool=giuggiolone
+20160222 - 1030 - switch - Insert
+20160222 - 1106 - Tool=Audit * fabri*, IdTool=135
+20160222 - 1112 - Tool=Audit * fabri *, IdTool=135
+20160301 - 1008 - SELECT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Url, Description, Category, tblCategories.CodeCategory FROM tblTools, tblCategories, tblToolsCategories WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory AND tblToolsCategories.Process="AN" AND tblCategories.Process = "AN" AND tblTools.IdTool=142
+20160301 - 1008 - Chainbreaker http://forensic.n0fate.com/tools/chainbreaker/ n0fate
+20160301 - 1008 - SELECT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Url, Description, Category, tblCategories.CodeCategory FROM tblTools, tblCategories, tblToolsCategories WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory AND tblToolsCategories.Process="AN" AND tblCategories.Process = "AN" AND tblTools.IdTool=0
+20160301 - 1008 -   
+20160301 - 1049 - SELECT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Url, Description, Category, tblCategories.CodeCategory FROM tblTools, tblCategories, tblToolsCategories WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory AND tblToolsCategories.Process="AN" AND tblCategories.Process = "AN" AND tblTools.IdTool=142
+20160301 - 1049 - Chainbreaker http://forensic.n0fate.com/tools/chainbreaker/ n0fate
+20160301 - 1049 - SELECT tblEditorTools.IdEditorTool, IdTool , Tool, LicenseType, OperatingSystem, tblEditorToolsCategories.Process, Developer, Url, Description, Category, tblCategories.CodeCategory FROM tblEditorTools, tblCategories, tblEditorToolsCategories WHERE tblEditorTools.IdEditorTool=tblEditorToolsCategories.IdEditorTool AND tblCategories.CodeCategory=tblEditorToolsCategories.CodeCategory AND tblEditorToolsCategories.Process="AN" AND tblCategories.Process = "AN" AND tblEditorTools.IdEditorTool=4
+20160301 - 1049 - Chainbreaker *FABRI* http://forensic.n0fate.com/tools/chainbreaker/ n0fate
+20160303 - 1219 - SELECT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Url, Description, Category, tblCategories.CodeCategory FROM tblTools, tblCategories, tblToolsCategories WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory AND tblToolsCategories.Process="AN" AND tblCategories.Process = "AN" AND tblTools.IdTool=797
+20160303 - 1219 - X-Ways Forensics http://www.x-ways.net/forensics/index-m.html X-Ways
+20160303 - 1220 - SELECT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Url, Description, Category, tblCategories.CodeCategory FROM tblTools, tblCategories, tblToolsCategories WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory AND tblToolsCategories.Process="AN" AND tblCategories.Process = "AN" AND tblTools.IdTool=797
+20160303 - 1220 - X-Ways Forensics http://www.x-ways.net/forensics/index-m.html X-Ways
+20160303 - 1225 - SELECT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Url, Description, Category, tblCategories.CodeCategory FROM tblTools, tblCategories, tblToolsCategories WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory AND tblToolsCategories.Process="AN" AND tblCategories.Process = "AN" AND tblTools.IdTool=797
+20160303 - 1225 - X-Ways Forensics http://www.x-ways.net/forensics/index-m.html X-Ways
+20160303 - 1225 - SELECT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Url, Description, Category, tblCategories.CodeCategory FROM tblTools, tblCategories, tblToolsCategories WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory AND tblToolsCategories.Process="AN" AND tblCategories.Process = "AN" AND tblTools.IdTool=797
+20160303 - 1225 - X-Ways Forensics http://www.x-ways.net/forensics/index-m.html X-Ways
+20160303 - 1226 - SELECT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Url, Description, Category, tblCategories.CodeCategory FROM tblTools, tblCategories, tblToolsCategories WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory AND tblToolsCategories.Process="AN" AND tblCategories.Process = "AN" AND tblTools.IdTool=797
+20160303 - 1226 - X-Ways Forensics http://www.x-ways.net/forensics/index-m.html X-Ways
+20160303 - 1227 - SELECT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Url, Description, Category, tblCategories.CodeCategory FROM tblTools, tblCategories, tblToolsCategories WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory AND tblToolsCategories.Process="AC" AND tblCategories.Process = "AC" AND tblTools.IdTool=797
+20160303 - 1227 - X-Ways Forensics http://www.x-ways.net/forensics/index-m.html X-Ways
+20160303 - 1259 - SELECT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Url, Description, Category, tblCategories.CodeCategory FROM tblTools, tblCategories, tblToolsCategories WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory AND tblToolsCategories.Process="AC" AND tblCategories.Process = "AC" AND tblTools.IdTool=797
+20160303 - 1259 - X-Ways Forensics http://www.x-ways.net/forensics/index-m.html X-Ways
+20160303 - 1404 - SELECT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Url, Description, Category, tblCategories.CodeCategory FROM tblTools, tblCategories, tblToolsCategories WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory AND tblToolsCategories.Process="AC" AND tblCategories.Process = "AC" AND tblTools.IdTool=797
+20160303 - 1404 - X-Ways Forensics http://www.x-ways.net/forensics/index-m.html X-Ways
+20160303 - 1439 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool= AND CodeCategory <>"09." AND Process="AN"
+20160303 - 1447 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool= AND CodeCategory <>"09." AND Process="AN"
+20160303 - 1448 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool= AND CodeCategory <>"09." AND Process="AN"
+20160303 - 1450 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool= AND CodeCategory <>"09." AND Process="AN"
+20160303 - 1451 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=797 AND CodeCategory <>"09." AND Process="AN"
+20160303 - 1519 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=371 AND CodeCategory <>"02.03." AND Process="AN"
+20160303 - 1522 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=371 AND CodeCategory <>"02.03." AND Process="AN"
+20160303 - 1549 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=130 AND CodeCategory <>"01.02.02." AND Process="AN"
+20160303 - 1600 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=137 AND CodeCategory <>"01.02.02." AND Process="AN"
+20160303 - 1606 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=137 AND CodeCategory <>"01.02.02." AND Process="AN"
+20160303 - 1606 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=137 AND CodeCategory <>"01.02.02." AND Process="AN"
+20160303 - 1608 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02." AND Process="AN"

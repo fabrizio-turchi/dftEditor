@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<meta charset="UTF-8">
+<html>
+<head>
+<title>None</title>
+<style>
+.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+.highlight * { font-family: monospace; }
+.highlight { font-size: large; }
+.highlight { line-height: normal; }
+.highlight .err { border: none !important }
+</style>
+</head>
+<body onload="window.print();">
+<div class="highlight"><pre><span class="lineno">  1</span> <span class="kd">function</span> <span class="nx">SetData</span><span class="p">(</span><span class="nx">process</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">  2</span>   
+<span class="lineno">  3</span>     <span class="nx">fCodeCategory</span>     <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">CodeCategory</span><span class="p">;</span>
+<span class="lineno">  4</span>     <span class="nx">fCodeCategoryAN</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">CodeCategoryAN</span><span class="p">;</span>    <span class="c1">// Categories related to Analysis</span>
+<span class="lineno">  5</span>     <span class="nx">fCodeCategoryAC</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">CodeCategoryAC</span><span class="p">;</span>    <span class="c1">// Categories related to Acquisition</span>
+<span class="lineno">  6</span>     
+<span class="lineno">  7</span>     <span class="k">if</span> <span class="p">(</span><span class="nx">process</span> <span class="o">==</span> <span class="s2">&quot;Analysis&quot;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">  8</span>         <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">process</span><span class="p">.</span><span class="nx">value</span><span class="o">=</span><span class="s2">&quot;AN&quot;</span><span class="p">;</span>
+<span class="lineno">  9</span>         <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">totalTools</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">nToolsAN</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+<span class="lineno"> 10</span>         <span class="nx">selectLength</span> <span class="o">=</span> <span class="nx">fCodeCategoryAN</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="lineno"> 11</span>         <span class="nx">fSelect</span> <span class="o">=</span> <span class="nx">fCodeCategoryAN</span><span class="p">;</span>
+<span class="lineno"> 12</span>         <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">dfTools</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s2">&quot;Analysis&quot;</span><span class="p">;</span>
+<span class="lineno"> 13</span>         <span class="p">}</span>            
+<span class="lineno"> 14</span>     <span class="k">else</span> <span class="p">{</span>
+<span class="lineno"> 15</span>         <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">process</span><span class="p">.</span><span class="nx">value</span><span class="o">=</span><span class="s2">&quot;AC&quot;</span><span class="p">;</span>
+<span class="lineno"> 16</span>         <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">totalTools</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">nToolsAC</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+<span class="lineno"> 17</span>         <span class="nx">selectLength</span> <span class="o">=</span> <span class="nx">fCodeCategoryAC</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="lineno"> 18</span>         <span class="nx">fSelect</span> <span class="o">=</span> <span class="nx">fCodeCategoryAC</span><span class="p">;</span>
+<span class="lineno"> 19</span>         <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">dfTools</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s2">&quot;Acquisition&quot;</span><span class="p">;</span>
+<span class="lineno"> 20</span>     <span class="p">}</span>        
+<span class="lineno"> 21</span>     
+<span class="lineno"> 22</span>     <span class="nx">fCodeCategory</span><span class="p">.</span><span class="nx">length</span> <span class="o">=</span> <span class="nx">selectLength</span>
+<span class="lineno"> 23</span>     <span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">selectLength</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 24</span>         <span class="nx">fCodeCategory</span><span class="p">.</span><span class="nx">options</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">fSelect</span><span class="p">.</span><span class="nx">options</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span><span class="p">;</span>
+<span class="lineno"> 25</span>         <span class="nx">fCodeCategory</span><span class="p">.</span><span class="nx">options</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">text</span> <span class="o">=</span> <span class="nx">fSelect</span><span class="p">.</span><span class="nx">options</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">text</span><span class="p">;</span>
+<span class="lineno"> 26</span>     <span class="p">}</span>    
+<span class="lineno"> 27</span>     <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">CodeCategory</span><span class="p">.</span><span class="nx">selectedIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno"> 28</span>     <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">license</span><span class="p">.</span><span class="nx">selectedIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno"> 29</span>     <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">toolName</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="lineno"> 30</span>     <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">os</span><span class="p">.</span><span class="nx">selectedIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno"> 31</span>     <span class="c1">//document.frmSearch.developer.value = &quot;&quot;;</span>
+<span class="lineno"> 32</span>     
+<span class="lineno"> 33</span>                 
+<span class="lineno"> 34</span>     <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#box&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="s2">&quot;slow&quot;</span><span class="p">)</span> 
+<span class="lineno"> 35</span> <span class="p">}</span>
+<span class="lineno"> 36</span> 
+<span class="lineno"> 37</span> <span class="kd">function</span> <span class="nx">CheckCategory</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno"> 38</span>     
+<span class="lineno"> 39</span>     <span class="nx">fProcess</span>                    <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">process</span><span class="p">;</span>
+<span class="lineno"> 40</span>     <span class="nx">fCategoryName</span>         <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">Category</span><span class="p">;</span>
+<span class="lineno"> 41</span>     <span class="nx">fCategories</span>               <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">CodeCategory</span><span class="p">;</span> 
+<span class="lineno"> 42</span>     <span class="nx">maxValuesFeature</span>     <span class="o">=</span> <span class="mi">4</span>     <span class="c1">// if a Feature has more then maxValuesFeature, then in the Features Panel are show two values for each row</span>
+<span class="lineno"> 43</span>     
+<span class="lineno"> 44</span>     
+<span class="lineno"> 45</span>     <span class="k">if</span> <span class="p">(</span><span class="nx">fProcess</span><span class="p">.</span><span class="nx">value</span> <span class="o">==</span> <span class="s2">&quot;AN&quot;</span><span class="p">)</span>         <span class="c1">// case Analysis</span>
+<span class="lineno"> 46</span>         <span class="nx">fFeatures</span>                  <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">FeaturesAN</span><span class="p">;</span>
+<span class="lineno"> 47</span>     <span class="k">else</span>                 <span class="c1">// case Acquisition</span>
+<span class="lineno"> 48</span>         <span class="nx">fFeatures</span>                  <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">FeaturesAC</span><span class="p">;</span>
+<span class="lineno"> 49</span>     
+<span class="lineno"> 50</span>     <span class="nx">fFeaturesValues</span>        <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">FeaturesValues</span><span class="p">;</span>
+<span class="lineno"> 51</span>     <span class="c1">//fSubFeaturesValues  = document.frmSearch.SubFeatures;   </span>
+<span class="lineno"> 52</span> 
+<span class="lineno"> 53</span> 
+<span class="lineno"> 54</span>     <span class="nx">idxCategory</span> <span class="o">=</span> <span class="nx">fCategories</span><span class="p">.</span><span class="nx">selectedIndex</span><span class="p">;</span>
+<span class="lineno"> 55</span>     <span class="nx">vCategory</span> <span class="o">=</span> <span class="nx">fCategories</span><span class="p">.</span><span class="nx">options</span><span class="p">[</span><span class="nx">idxCategory</span><span class="p">].</span><span class="nx">value</span><span class="p">;</span>
+<span class="lineno"> 56</span>     <span class="nx">idFeatures</span> <span class="o">=</span> <span class="nx">fFeatures</span><span class="p">.</span><span class="nx">options</span><span class="p">[</span><span class="nx">idxCategory</span><span class="p">].</span><span class="nx">value</span><span class="p">;</span>
+<span class="lineno"> 57</span>     <span class="nx">nameFeatures</span> <span class="o">=</span> <span class="nx">fFeatures</span><span class="p">.</span><span class="nx">options</span><span class="p">[</span><span class="nx">idxCategory</span><span class="p">].</span><span class="nx">text</span><span class="p">;</span>
+<span class="lineno"> 58</span>     <span class="nx">fCategoryName</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">fCategories</span><span class="p">.</span><span class="nx">options</span><span class="p">[</span><span class="nx">idxCategory</span><span class="p">].</span><span class="nx">text</span><span class="p">;</span>
+<span class="lineno"> 59</span>     
+<span class="lineno"> 60</span>     <span class="c1">//window.alert(&quot;idx=&quot; + idxCategory + &quot;category=&quot; + vCategory + &quot;, \nidF=&quot; + idFeatures + &quot;\nnameF=&quot; + nameFeatures);</span>
+<span class="lineno"> 61</span> 
+<span class="lineno"> 62</span>     <span class="nx">removePanel</span><span class="p">();</span>
+<span class="lineno"> 63</span>     
+<span class="lineno"> 64</span>     <span class="k">if</span> <span class="p">(</span><span class="nx">idFeatures</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>  <span class="c1">// if there isn&#39;t any feature  related to the chosen category</span>
+<span class="lineno"> 65</span>         <span class="p">;</span>
+<span class="lineno"> 66</span>     <span class="k">else</span> <span class="p">{</span>   <span class="c1">// there is, at least, a feature related to the chosen category, it shows the feature panel!</span>
+<span class="lineno"> 67</span>         <span class="nx">divBox</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;div id=&quot;box&quot;&gt;&lt;/div&gt;&#39;</span><span class="p">);</span>
+<span class="lineno"> 68</span>         <span class="nx">divBox</span><span class="p">.</span><span class="nx">appendTo</span><span class="p">(</span><span class="s2">&quot;#container&quot;</span><span class="p">);</span>
+<span class="lineno"> 69</span>     <span class="p">}</span>        
+<span class="lineno"> 70</span>     
+<span class="lineno"> 71</span>     <span class="nx">aIdFeatures</span> <span class="o">=</span> <span class="nx">idFeatures</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">);</span>                    <span class="c1">// extract all features id separated by #</span>
+<span class="lineno"> 72</span>     <span class="nx">aNamesFeatures</span> <span class="o">=</span> <span class="nx">nameFeatures</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">);</span>      <span class="c1">// extract all features names separated by #</span>
+<span class="lineno"> 73</span>     <span class="nx">checkboxNumber</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno"> 74</span>     <span class="k">for</span> <span class="p">(</span><span class="nx">k</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">k</span> <span class="o">&lt;</span> <span class="nx">aIdFeatures</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>            <span class="c1">// loop on all Features related to the selected category</span>
+<span class="lineno"> 75</span>         <span class="nx">idFeatureSubFeature</span> <span class="o">=</span> <span class="nx">aIdFeatures</span><span class="p">[</span><span class="nx">k</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;@&quot;</span><span class="p">);</span>    <span class="c1">// the value contains idFeature@DeeperLevel, DeeperLevel may assume S (with sub features) or N (without sub features)</span>
+<span class="lineno"> 76</span>         <span class="nx">idFeature</span> <span class="o">=</span> <span class="nx">idFeatureSubFeature</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="lineno"> 77</span>         <span class="nx">idSubFeature</span> <span class="o">=</span> <span class="nx">idFeatureSubFeature</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="lineno"> 78</span>         <span class="nx">visibleFeature</span> <span class="o">=</span> <span class="nx">idFeatureSubFeature</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span> 
+<span class="lineno"> 79</span>         <span class="nx">nameFeature</span> <span class="o">=</span> <span class="nx">aNamesFeatures</span><span class="p">[</span><span class="nx">k</span><span class="p">];</span>
+<span class="lineno"> 80</span>         <span class="nx">valueFound</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="lineno"> 81</span>         <span class="k">if</span> <span class="p">(</span><span class="nx">idSubFeature</span> <span class="o">==</span> <span class="s2">&quot;N&quot;</span><span class="p">)</span> <span class="p">{</span>                <span class="c1">// feature without subfeatures</span>
+<span class="lineno"> 82</span>             <span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">fFeaturesValues</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 83</span>                 <span class="k">if</span> <span class="p">(</span><span class="nx">fFeaturesValues</span><span class="p">.</span><span class="nx">options</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span> <span class="o">==</span> <span class="nx">idFeature</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 84</span>                     <span class="nx">checkboxNumber</span> <span class="o">++</span><span class="p">;</span>
+<span class="lineno"> 85</span> <span class="c1">//if the Feature is not visibile, case Category=03. and Feature=Function all values of that Feature are set on checked but the Feature is not shown on Features panel</span>
+<span class="lineno"> 86</span>                     <span class="k">if</span> <span class="p">(</span><span class="nx">visibleFeature</span> <span class="o">==</span><span class="s2">&quot;N&quot;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 87</span>                         <span class="nx">classFeature</span>  <span class="o">=</span> <span class="s2">&quot; class=dftHidden &quot;</span><span class="p">;</span>
+<span class="lineno"> 88</span>                         <span class="nx">classRadio</span>     <span class="o">=</span> <span class="s2">&quot; class=dftHidden &quot;</span><span class="p">;</span>
+<span class="lineno"> 89</span>                         <span class="nx">sName</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="lineno"> 90</span>                         <span class="nx">checkboxNumber</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno"> 91</span>                     <span class="p">}</span>                        
+<span class="lineno"> 92</span>                     <span class="k">else</span> <span class="p">{</span>
+<span class="lineno"> 93</span>                         <span class="nx">classFeature</span> <span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">;</span>                    
+<span class="lineno"> 94</span>                         <span class="nx">classRadio</span> <span class="o">=</span> <span class="s2">&quot; class=dftTextGrassetto &quot;</span><span class="p">;</span>
+<span class="lineno"> 95</span>                         <span class="nx">sName</span> <span class="o">=</span> <span class="nx">nameFeature</span>
+<span class="lineno"> 96</span>                     <span class="p">}</span>                        
+<span class="lineno"> 97</span>                            
+<span class="lineno"> 98</span>                     <span class="k">if</span> <span class="p">(</span><span class="nx">checkboxNumber</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+<span class="lineno"> 99</span>                         <span class="nx">labelRadio</span> <span class="o">=</span> <span class="s2">&quot;&lt;hr&gt;&lt;input type=checkbox &quot;</span> <span class="o">+</span> <span class="nx">classFeature</span> <span class="o">+</span> <span class="s2">&quot;checked name=&quot;</span> <span class="o">+</span> <span class="nx">idFeature</span><span class="p">;</span>
+<span class="lineno">100</span>                     <span class="k">else</span>
+<span class="lineno">101</span>                         <span class="nx">labelRadio</span> <span class="o">=</span> <span class="s2">&quot;&lt;input type=checkbox &quot;</span> <span class="o">+</span> <span class="nx">classFeature</span> <span class="o">+</span> <span class="s2">&quot;checked name=&quot;</span> <span class="o">+</span> <span class="nx">idFeature</span><span class="p">;</span>    
+<span class="lineno">102</span>                         
+<span class="lineno">103</span>                     <span class="nx">labelRadio</span> <span class="o">=</span> <span class="nx">labelRadio</span> <span class="o">+</span> <span class="s2">&quot; onClick=javascript:SelectDeselectValues(&#39;&quot;</span> <span class="o">+</span> <span class="nx">idFeature</span> <span class="o">+</span> <span class="s2">&quot;&#39;);&gt;&quot;</span><span class="p">;</span>
+<span class="lineno">104</span>                     <span class="nx">labelFeature</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">labelRadio</span> <span class="o">+</span> <span class="s1">&#39;&lt;span &#39;</span> <span class="o">+</span> <span class="nx">classRadio</span> <span class="o">+</span> <span class="s1">&#39;&gt; &#39;</span> <span class="o">+</span> <span class="nx">sName</span> <span class="o">+</span> <span class="s1">&#39;&lt;/span&gt;&lt;br/&gt;&#39;</span><span class="p">);</span>
+<span class="lineno">105</span>                     <span class="nx">labelFeature</span><span class="p">.</span><span class="nx">appendTo</span><span class="p">(</span><span class="s2">&quot;#box&quot;</span><span class="p">);</span>
+<span class="lineno">106</span>                     <span class="nx">aValues</span> <span class="o">=</span> <span class="nx">fFeaturesValues</span><span class="p">.</span><span class="nx">options</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">text</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">);</span>    <span class="c1">// extract all values separated by #</span>
+<span class="lineno">107</span>                     <span class="k">if</span> <span class="p">(</span><span class="nx">aValues</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="nx">maxValuesFeature</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// if a Feature has more then maxValuesFeature, then in the Features Panel  two values for each row are shown</span>
+<span class="lineno">108</span>                         <span class="k">for</span> <span class="p">(</span><span class="nx">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">aValues</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">109</span>                             <span class="nx">nameCheckOne</span> <span class="o">=</span> <span class="nx">idFeature</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="nx">j</span><span class="p">;</span>
+<span class="lineno">110</span>                             <span class="nx">valueCheckOne</span> <span class="o">=</span> <span class="nx">aValues</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+<span class="lineno">111</span>                             <span class="k">if</span> <span class="p">(</span><span class="nx">j</span> <span class="o">==</span> <span class="nx">aValues</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="lineno">112</span>                                 <span class="nx">create_box_double_end</span><span class="p">(</span><span class="nx">nameCheckOne</span><span class="p">,</span> <span class="nx">valueCheckOne</span><span class="p">,</span> <span class="nx">classRadio</span><span class="p">,</span> <span class="nx">sName</span><span class="p">);</span> 
+<span class="lineno">113</span>                             <span class="k">else</span> <span class="p">{</span>
+<span class="lineno">114</span>                                 <span class="nx">idx</span> <span class="o">=</span> <span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="lineno">115</span>                                 <span class="nx">nameCheckTwo</span> <span class="o">=</span> <span class="nx">idFeature</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="nx">idx</span><span class="p">;</span>
+<span class="lineno">116</span>                                 <span class="nx">valueCheckTwo</span> <span class="o">=</span> <span class="nx">aValues</span><span class="p">[</span><span class="nx">idx</span><span class="p">];</span>
+<span class="lineno">117</span>                                 <span class="nx">create_box_double</span> <span class="p">(</span><span class="nx">nameCheckOne</span><span class="p">,</span> <span class="nx">valueCheckOne</span><span class="p">,</span> <span class="nx">nameCheckTwo</span><span class="p">,</span> <span class="nx">valueCheckTwo</span><span class="p">,</span> <span class="nx">classRadio</span><span class="p">,</span> <span class="nx">sName</span><span class="p">);</span>
+<span class="lineno">118</span>                                 <span class="nx">j</span> <span class="o">=</span> <span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="lineno">119</span>                             <span class="p">}</span>                                                                
+<span class="lineno">120</span>                         <span class="p">}</span>
+<span class="lineno">121</span>                     <span class="p">}</span>
+<span class="lineno">122</span>                     <span class="k">else</span> <span class="p">{</span>
+<span class="lineno">123</span>                         <span class="k">for</span> <span class="p">(</span><span class="nx">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">aValues</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">124</span>                             <span class="nx">nameCheck</span> <span class="o">=</span> <span class="nx">idFeature</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="nx">j</span><span class="p">;</span>
+<span class="lineno">125</span>                             <span class="nx">valueCheck</span> <span class="o">=</span> <span class="nx">aValues</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+<span class="lineno">126</span>                             <span class="nx">create_box_special</span><span class="p">(</span><span class="nx">nameCheck</span><span class="p">,</span> <span class="nx">valueCheck</span><span class="p">,</span> <span class="nx">classRadio</span><span class="p">,</span> <span class="nx">sName</span><span class="p">);</span> 
+<span class="lineno">127</span>                         <span class="p">}</span>
+<span class="lineno">128</span>                     <span class="p">}</span>                        
+<span class="lineno">129</span>                    <span class="nx">valueFound</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="lineno">130</span>                    <span class="k">break</span><span class="p">;</span>
+<span class="lineno">131</span>                 <span class="p">}</span>
+<span class="lineno">132</span>             <span class="p">}</span> 
+<span class="lineno">133</span>             <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">valueFound</span><span class="p">){</span>
+<span class="lineno">134</span>                 <span class="nx">labelFeature</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;span class=dftTextGrassetto&gt;&lt;input type=checkbox name=&#39;</span> <span class="o">+</span> <span class="nx">idFeature</span> <span class="o">+</span> <span class="s1">&#39; value=&quot;Yes&quot;&gt; &#39;</span> <span class="o">+</span> <span class="nx">nameFeature</span> <span class="o">+</span> <span class="s1">&#39;&lt;/span&gt;&lt;br/&gt;&#39;</span><span class="p">);</span>
+<span class="lineno">135</span>                 <span class="nx">labelFeature</span><span class="p">.</span><span class="nx">appendTo</span><span class="p">(</span><span class="s2">&quot;#box&quot;</span><span class="p">);</span>
+<span class="lineno">136</span>             <span class="p">}</span>
+<span class="lineno">137</span>         <span class="p">}</span>
+<span class="lineno">138</span>     <span class="p">}</span>        
+<span class="lineno">139</span>     
+<span class="lineno">140</span>    <span class="nx">idx</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">CodeCategory</span><span class="p">.</span><span class="nx">selectedIndex</span><span class="p">;</span>
+<span class="lineno">141</span> 
+<span class="lineno">142</span>    <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">process</span><span class="p">.</span><span class="nx">value</span> <span class="o">==</span> <span class="s2">&quot;AN&quot;</span><span class="p">)</span>
+<span class="lineno">143</span>         <span class="nx">sizeBox</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">boxSizesAN</span><span class="p">.</span><span class="nx">options</span><span class="p">[</span><span class="nx">idx</span><span class="p">].</span><span class="nx">value</span><span class="p">;</span>
+<span class="lineno">144</span>     <span class="k">else</span>
+<span class="lineno">145</span>         <span class="nx">sizeBox</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">boxSizesAC</span><span class="p">.</span><span class="nx">options</span><span class="p">[</span><span class="nx">idx</span><span class="p">].</span><span class="nx">value</span><span class="p">;</span>               
+<span class="lineno">146</span>         
+<span class="lineno">147</span>     <span class="nx">sizeContainer</span> <span class="o">=</span> <span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">sizeBox</span><span class="p">)</span> <span class="o">+</span> <span class="mi">30</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span>
+<span class="lineno">148</span>     <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#container&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">,</span><span class="nx">sizeContainer</span><span class="p">);</span>
+<span class="lineno">149</span>     <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#box&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">,</span><span class="nx">sizeBox</span><span class="p">);</span>
+<span class="lineno">150</span>     <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#box&quot;</span><span class="p">).</span><span class="nx">toggle</span><span class="p">(</span><span class="s2">&quot;slow&quot;</span><span class="p">);</span>
+<span class="lineno">151</span>  <span class="p">}</span>
+<span class="lineno">152</span>  
+<span class="lineno">153</span>  <span class="kd">function</span> <span class="nx">SelectDeselect</span><span class="p">(</span><span class="nx">idFeature</span><span class="p">)</span> <span class="p">{</span>        <span class="c1">// check box for selecting/deselecting all subfeature values</span>
+<span class="lineno">154</span>     <span class="kd">var</span> <span class="nx">elementsLength</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">elements</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="lineno">155</span>     <span class="c1">//fSubFeatures = document.frmSearch.SubFeatures;</span>
+<span class="lineno">156</span>     
+<span class="lineno">157</span>     <span class="nx">lFound</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="lineno">158</span>     <span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">elementsLength</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">159</span>         <span class="k">if</span> <span class="p">(</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">elements</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span> <span class="o">==</span> <span class="nx">idFeature</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">160</span>             <span class="nx">fFeature</span> <span class="o">=</span> <span class="nx">frmSearch</span><span class="p">.</span><span class="nx">elements</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="lineno">161</span>             <span class="nx">lFound</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="lineno">162</span>             <span class="k">break</span><span class="p">;</span>
+<span class="lineno">163</span>         <span class="p">}</span>            
+<span class="lineno">164</span>     <span class="p">}</span>
+<span class="lineno">165</span>     <span class="k">if</span> <span class="p">(</span><span class="nx">lFound</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">166</span>        <span class="k">for</span> <span class="p">(</span><span class="nx">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">j</span><span class="o">&lt;</span><span class="nx">fSubFeatures</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span>  <span class="p">{</span>
+<span class="lineno">167</span>             <span class="k">if</span> <span class="p">(</span><span class="nx">fSubFeatures</span><span class="p">.</span><span class="nx">options</span><span class="p">[</span><span class="nx">j</span><span class="p">].</span><span class="nx">value</span> <span class="o">==</span> <span class="nx">fFeature</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">168</span>                 <span class="c1">//window.alert(&quot;before split #, &quot; + fSubFeatures.options[j].text);</span>
+<span class="lineno">169</span>                 <span class="nx">valuesSubFeatures</span> <span class="o">=</span> <span class="nx">fSubFeatures</span><span class="p">.</span><span class="nx">options</span><span class="p">[</span><span class="nx">j</span><span class="p">].</span><span class="nx">text</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">);</span>
+<span class="lineno">170</span>                 <span class="k">for</span> <span class="p">(</span><span class="nx">k</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">k</span> <span class="o">&lt;</span> <span class="nx">valuesSubFeatures</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">171</span>                     <span class="nx">idSubF</span> <span class="o">=</span> <span class="nx">valuesSubFeatures</span><span class="p">[</span><span class="nx">k</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;@&quot;</span><span class="p">);</span>
+<span class="lineno">172</span>                     <span class="nx">id</span> <span class="o">=</span> <span class="nx">idSubF</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="lineno">173</span>                     <span class="k">for</span> <span class="p">(</span><span class="nx">m</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">m</span> <span class="o">&lt;</span> <span class="nx">elementsLength</span><span class="p">;</span> <span class="nx">m</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">174</span>                         <span class="k">if</span> <span class="p">(</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">elements</span><span class="p">[</span><span class="nx">m</span><span class="p">].</span><span class="nx">name</span> <span class="o">==</span> <span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">175</span>                             <span class="nx">fSubFeature</span> <span class="o">=</span> <span class="nx">frmSearch</span><span class="p">.</span><span class="nx">elements</span><span class="p">[</span><span class="nx">m</span><span class="p">];</span>     
+<span class="lineno">176</span>                             <span class="k">break</span><span class="p">;</span>
+<span class="lineno">177</span>                         <span class="p">}</span>
+<span class="lineno">178</span>                     <span class="p">}</span>       
+<span class="lineno">179</span>                     <span class="k">if</span> <span class="p">(</span><span class="nx">fFeature</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span>
+<span class="lineno">180</span>                         <span class="nx">fSubFeature</span><span class="p">.</span><span class="nx">checked</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="lineno">181</span>                     <span class="k">else</span>
+<span class="lineno">182</span>                         <span class="nx">fSubFeature</span><span class="p">.</span><span class="nx">checked</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>                                                
+<span class="lineno">183</span>                 <span class="p">}</span>                    
+<span class="lineno">184</span>             <span class="p">}</span>                
+<span class="lineno">185</span>         <span class="p">}</span>           
+<span class="lineno">186</span>     <span class="p">}</span>        
+<span class="lineno">187</span> <span class="p">}</span>        
+<span class="lineno">188</span> 
+<span class="lineno">189</span>  <span class="kd">function</span> <span class="nx">SelectDeselectValues</span><span class="p">(</span><span class="nx">idFeature</span><span class="p">)</span> <span class="p">{</span>            <span class="c1">// check box for selecting/deselecting all feature values</span>
+<span class="lineno">190</span>     <span class="kd">var</span> <span class="nx">elementsLength</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">elements</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="lineno">191</span>     <span class="kd">var</span> <span class="nx">maxValuesFeature</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>        <span class="c1">// there isn&#39;t more than 20 values for each feature</span>
+<span class="lineno">192</span>     
+<span class="lineno">193</span>     <span class="nx">lFound</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="lineno">194</span>     <span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">elementsLength</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">195</span>         <span class="k">if</span> <span class="p">(</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">elements</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span> <span class="o">==</span> <span class="nx">idFeature</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">196</span>             <span class="nx">fFeature</span> <span class="o">=</span> <span class="nx">frmSearch</span><span class="p">.</span><span class="nx">elements</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="lineno">197</span>             <span class="nx">lFound</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="lineno">198</span>             <span class="k">break</span><span class="p">;</span>
+<span class="lineno">199</span>         <span class="p">}</span>            
+<span class="lineno">200</span>     <span class="p">}</span>
+<span class="lineno">201</span>     <span class="k">if</span> <span class="p">(</span><span class="nx">lFound</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">202</span>         <span class="nx">value</span> <span class="o">=</span> <span class="nx">fFeature</span><span class="p">.</span><span class="nx">checked</span><span class="p">;</span> 
+<span class="lineno">203</span>         <span class="c1">//window.alert(value); </span>
+<span class="lineno">204</span>         <span class="k">for</span> <span class="p">(</span><span class="nx">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">j</span><span class="o">&lt;</span><span class="nx">maxValuesFeature</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span>  <span class="p">{</span>
+<span class="lineno">205</span>             <span class="nx">valueFeature</span> <span class="o">=</span> <span class="nx">idFeature</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="nx">j</span><span class="p">;</span>
+<span class="lineno">206</span>             <span class="k">for</span> <span class="p">(</span><span class="nx">k</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">k</span> <span class="o">&lt;</span> <span class="nx">elementsLength</span><span class="p">;</span> <span class="nx">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">207</span>                 <span class="k">if</span> <span class="p">(</span><span class="nx">frmSearch</span><span class="p">.</span><span class="nx">elements</span><span class="p">[</span><span class="nx">k</span><span class="p">].</span><span class="nx">name</span> <span class="o">==</span> <span class="nx">valueFeature</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">208</span>                     <span class="nx">fValue</span> <span class="o">=</span> <span class="nx">frmSearch</span><span class="p">.</span><span class="nx">elements</span><span class="p">[</span><span class="nx">k</span><span class="p">];</span>     
+<span class="lineno">209</span>                     <span class="nx">fValue</span><span class="p">.</span><span class="nx">checked</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+<span class="lineno">210</span>                     <span class="k">break</span><span class="p">;</span>      
+<span class="lineno">211</span>                 <span class="p">}</span> 
+<span class="lineno">212</span>             <span class="p">}</span>                                           
+<span class="lineno">213</span>         <span class="p">}</span>           
+<span class="lineno">214</span>     <span class="p">}</span>        
+<span class="lineno">215</span> <span class="p">}</span>        
+</pre></div>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+
+/**
+* %%Specific Body Style 
+*/
+body,html {
+}
+body {
+     font: 12px Verdana, Arial, Helvetica, sans-serif;
+	 margin:40px;
+}
+
+
+/**
+* %%Layout
+*/
+
+#container {
+         width: 60% ;
+}
+
+/**
+* %%Typography
+*/
+
+table {
+	font-size: 1em;
+}
+
+/* standards redesign */
+h1 {
+	font-size:26px;
+	font-weight:bold;
+}
+h2 {
+	font-size:20px;
+}
+h3 {
+	font-size:16px
+}
+p {
+	line-height:150%;
+}
+strong {
+	font-weight:bold;
+}
+del {
+	text-decoration: line-through;
+	color: #666;
+}
+cite, em, dfn  {
+	font-style:italic;
+}
+ins, dfn {
+	border-bottom: 1px solid #ccc;
+}
+sup {
+	vertical-align: super;
+}
+sub {
+	vertical-align: sub;
+}
+a abbr, a acronym {
+	border: none;
+}
+abbr, acronym {
+	text-transform: uppercase;
+	font-size: 85%;
+	letter-spacing: .1em;
+}
+abbr[title], acronym[title], dfn[title] {
+	cursor: help;
+	border-bottom: 1px dotted #ccc;
+}
+code, kbd, samp, pre, tt, var {
+	font-size: 92%;
+	font-family: monaco, "Lucida Console", courier, monospace;
+}
+
+/* dimensions */
+small, .small, sup, sub {
+	font-size:80%;
+}
+.big {
+	font-size:145%;
+}
+.thin {
+	font-weight: lighter;
+}
+
+/* colors */
+.red {
+	color:#F00;
+}
+.orange {
+	color:#F60;
+}
+.blue {
+	color:#03F;
+}
+.green {
+	color:#0C0;
+}
+
+/* various styles */
+.underline {
+	text-decoration:underline;
+}
+
+.debug {
+	outline:1px solid #F00;
+}
+
+.highlight {
+	background-color:#FF6;  /* bright yellow */
+	padding:0px 2px;
+}
+.quiet {
+	color:#666;
+}
+.loud {
+	color:#000;
+}
+
+/* on demand structure */
+fieldset {
+	border:1px solid #ccc;
+	width:95%;
+	padding:7px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+fieldset legend {
+	padding:0 3px;
+	font-weight:bold;
+}
+form input[type='text'], form select, form textarea {
+	border:1px solid #ccc;
+}
+
+pre {
+	background: #EEE;
+	padding: 5px;
+	border: 1px solid #CCCCCC;
+}

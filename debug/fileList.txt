@@ -1,0 +1,4 @@
+catalogue.csv
+dfte.log
+dfte.send.mail.log
+fileList.txt

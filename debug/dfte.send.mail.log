@@ -1,0 +1,93 @@
+20160217 12:10:35 - successfully sent the mail: audit ciccio
+20160217 12:11:57 - successfully sent the mail: Autopsy fabrizio
+20160217 12:16:44 - successfully sent the mail: Chainbreaker fabrizio
+20160217 14:05:28 - Operation parameter is wrongs, values admissable are U or I
+20160217 14:29:11 - Operation parameter is wrongs, values admissable are U or I
+20160217 14:37:46 - successfully sent the mail: Chainbreaker fabrizio
+20160217 14:48:05 - Operation parameter is wrongs, values admissable are U or I
+20160217 14:51:04 - successfully sent the mail: iParser fabrizio
+20160217 15:06:04 - successfully sent the mail: Chainbreaker fabrizio
+20160217 15:12:51 - Operation parameter is wrongs, values admissable are U or I
+20160217 15:36:37 - successfully sent the mail: iParser fabrizio
+20160217 15:37:21 - Operation parameter is wrongs, values admissable are U or I
+20160217 15:46:23 - successfully sent the mail: Chainbreaker fabrizio
+20160217 16:44:56 - Operation parameter is wrongs, values admissable are U or I
+20160217 16:54:05 - successfully sent the mail: fasfa fabrizio
+20160217 16:55:36 - Operation parameter is wrong, values admissable are U or I, value=P
+20160217 17:14:39 - successfully sent the mail: fasfa fabrizio
+20160217 17:22:50 - successfully sent the mail: Chainbreaker fabrizio
+20160218 10:03:46 - successfully sent the mail: tracktrack fabrizio
+20160218 10:46:41 - failed to send the approval mail: TracksInspector fabrizio
+20160218 10:53:14 - successfully sent the approval mail: TracksInspector fabrizio
+20160218 11:14:20 - successfully sent the approval mail: tracktrack fabrizio
+20160218 12:53:51 - successfully sent the mail: Chainbreaker fabrizio
+20160218 12:55:27 - successfully sent the mail: tracksinspector fabrizio
+20160218 13:47:15 - successfully sent the approval mail: Chainbreaker Fabri_name
+20160218 13:47:15 - successfully sent the approval mail: tracksinspector fabrizio
+20160218 14:19:30 - Operation parameter is wrong, values admissable are U or I, value=fabrizio.turchi@ittig.cnr.it
+20160218 14:19:37 - successfully sent the approval mail: Tracks Inspector
+20160218 14:50:32 - Operation parameter is wrong, values admissable are U or I, value=fabrizio.turchi@ittig.cnr.it
+20160218 14:51:47 - successfully sent the mail: fasfa fabrizio
+20160218 14:55:10 - Operation parameter is wrong, values admissable are U or I, value=fabrizio.turchi@ittig.cnr.it
+20160218 14:56:57 - successfully sent the mail: Office Plist Parser fabrizio
+20160218 15:08:09 - Operation parameter is wrong, values admissable are U or I, value=fabrizio
+20160218 15:08:16 - successfully sent the approval mail: Office Plist Parser *FABRI* fabrizio
+20160218 15:08:16 - successfully sent the approval mail: Spotlight Inspector *FABRI* fabrizio
+20160218 15:08:16 - successfully sent the approval mail: felix the cat fabrizio
+20160218 15:08:16 - successfully sent the approval mail: IOReg Info fabrizio
+20160218 15:16:14 - successfully sent the mail: Audit fabrizio
+20160218 15:17:23 - successfully sent the mail: topolino fabrizio
+20160218 15:17:28 - successfully sent the approval mail: topolino fabrizio
+20160218 15:17:28 - successfully sent the approval mail: Audit * FABRI * fabrizio
+20160218 15:18:42 - successfully sent the mail: Dump Torrent fabrizio
+20160218 15:19:07 - successfully sent the mail: Kazalyser fabrizio
+20160218 15:19:12 - successfully sent the approval mail: Dump Torrent ++pkpoè poikèop fabrizio
+20160218 15:19:12 - successfully sent the approval mail: Kazalyser kjhjhjkhjk fabrizio
+20160218 23:30:04 - successfully sent the mail: pippone fabrizio
+20160218 23:30:18 - successfully sent the approval mail: pippone fabrizio
+20160220 13:30:24 - successfully sent the mail: Audit fabrizio
+20160221 19:28:50 - failed to send the mail: Chainbreaker delfinofabri
+20160221 19:32:01 - Usage: ./dfte.send.mail.ssl.py toolName user userEmail operation ltsEmailAdmins
+20160221 19:33:13 - successfully sent the mail: chainchain delfinofabri
+20160221 19:38:17 - failed to send the mail: Find Any File delfinofabri
+20160221 19:42:20 - failed to send the mail: iParser delfinofabri fabrizio.turchi@gmail.com U , 
+20160221 19:44:39 - successfully sent the mail: OSX Plist Parser delfinofabri
+20160221 19:49:23 - successfully sent the mail: Dropbox Decryptor delfinofabri fabrizio.turchi@gmail.com U fabrizio.turchi@ittig.cnr.it, giuseppina.sabato@ittig.cnr.it
+20160221 19:55:41 - successfully sent the mail: Dropbox Decryptor delfinofabri fabrizio.turchi@gmail.com U fabrizio.turchi@ittig.cnr.it, giuseppina.sabato@ittig.cnr.it
+20160221 19:56:49 - successfully sent the mail: Dropbox Decryptor delfinofabri fabrizio.turchi@gmail.com U giuseppina.sabato@ittig.cnr.it, fabrizio.turchi@ittig.cnr.it
+20160221 19:57:04 - successfully sent the mail: Dropbox Decryptor delfinofabri fabrizio.turchi@gmail.com U giuseppina.sabato@ittig.cnr.it,fabrizio.turchi@ittig.cnr.it
+20160221 20:00:40 - successfully sent the mail: Dropbox Decryptor delfinofabri fabrizio.turchi@gmail.com U giuseppina.sabato@ittig.cnr.it,fabrizio.turchi@ittig.cnr.it
+20160221 22:18:55 - successfully sent the mail: Dropbox Decryptor delfinofabri fabrizio.turchi@gmail.com U giuseppina.sabato@ittig.cnr.it, fabrizio.turchi@ittig.cnr.it
+20160221 22:27:21 - failed to send the mail: Dropbox Decryptor delfinofabri fabrizio.turchi@gmail.com U giuseppina.sabato@ittig.cnr.it, fabrizio.turchi@ittig.cnr.it
+20160221 22:28:35 - successfully sent the mail: Dropbox Decryptor delfinofabri fabrizio.turchi@gmail.com U giuseppina.sabato@ittig.cnr.it,fabrizio.turchi@ittig.cnr.it
+20160221 22:54:06 - successfully sent the mail: Dropbox Decryptor delfinofabri fabrizio.turchi@gmail.com U giuseppina.sabato@ittig.cnr.it
+20160221 22:58:01 - successfully sent the mail: Chat Examiner delfinofabri fabrizio.turchi@gmail.com U fabrizio.turchi@ittig.cnr.it
+20160221 22:58:01 - successfully sent the mail: Chat Examiner delfinofabri fabrizio.turchi@gmail.com U giuseppina.sabato@ittig.cnr.it
+20160222 09:37:55 - successfully sent the approval mail: Chainbreaker *DELFINOFABRI* delfinofabri
+20160222 09:37:55 - successfully sent the approval mail: Find Any File * FABRI* delfinofabri
+20160222 09:37:55 - successfully sent the approval mail: Chat Examiner ***FABRI delfinofabri
+20160222 09:37:55 - successfully sent the approval mail: OSX Plist Parser * PIPPI * delfinofabri
+20160222 09:37:55 - successfully sent the approval mail: Dropbox Decryptor *dicchè* delfinofabri
+20160222 09:37:55 - successfully sent the approval mail: iParser *DELFINO* delfinofabri
+20160222 09:37:55 - successfully sent the approval mail: Audit - FABRI fabrizio
+20160222 09:50:38 - successfully sent the mail: Chainbreaker fabrizio fabrizio.turchi@ittig.cnr.it U fabrizio.turchi@ittig.cnr.it
+20160222 09:50:43 - successfully sent the approval mail: Chainbreaker *FABRI* fabrizio
+20160222 10:12:21 - successfully sent the mail: Audit fabrizio fabrizio.turchi@ittig.cnr.it U fabrizio.turchi@ittig.cnr.it
+20160222 10:12:25 - successfully sent the approval mail: Audit * FABABABA fabrizio
+20160222 10:16:49 - successfully sent the mail: pippone fabrizio fabrizio.turchi@ittig.cnr.it I fabrizio.turchi@ittig.cnr.it
+20160222 10:19:12 - successfully sent the mail: giuggiolone fabrizio fabrizio.turchi@ittig.cnr.it I fabrizio.turchi@ittig.cnr.it
+20160222 10:23:08 - successfully sent the mail: huihui fabrizio fabrizio.turchi@ittig.cnr.it I fabrizio.turchi@ittig.cnr.it
+20160222 10:23:39 - successfully sent the approval mail: huihui fabrizio
+20160222 10:25:11 - successfully sent the approval mail: giuggiolone fabrizio
+20160222 10:30:45 - successfully sent the approval mail: pippone fabrizio
+20160222 10:51:07 - successfully sent the mail: Audit fabrizio fabrizio.turchi@ittig.cnr.it U fabrizio.turchi@ittig.cnr.it
+20160222 10:51:12 - successfully sent the approval mail: Audit *FABRI* fabrizio
+20160222 10:59:04 - successfully sent the mail: Audit fabrizio fabrizio.turchi@ittig.cnr.it U fabrizio.turchi@ittig.cnr.it
+20160222 11:00:15 - successfully sent the approval mail: Audit *FABRI* fabrizio
+20160222 11:06:48 - successfully sent the mail: Audit fabrizio fabrizio.turchi@ittig.cnr.it U fabrizio.turchi@ittig.cnr.it
+20160222 11:06:52 - successfully sent the approval mail: Audit * fabri* fabrizio
+20160222 11:12:34 - successfully sent the mail: Audit fabrizio fabrizio.turchi@ittig.cnr.it U fabrizio.turchi@ittig.cnr.it
+20160222 11:12:45 - successfully sent the approval mail: Audit * fabri * fabrizio
+20160301 10:49:46 - successfully sent the mail: Chainbreaker fabrizio fabrizio.turchi@ittig.cnr.it U fabrizio.turchi@ittig.cnr.it
+20160303 16:08:16 - successfully sent the mail: Audit sonia sonia.pezzolini@gmail.com U fabrizio.turchi@ittig.cnr.it
+20160303 16:09:11 - successfully sent the approval mail: Audit sonia

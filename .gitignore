@@ -1,0 +1,8 @@
+admin/
+.DS_Store
+dfte._installation/
+X*
+dfte.config*php
+dfte.send.mail*py
+util.send.mail*php
+dfte.config*php
