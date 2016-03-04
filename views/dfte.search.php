@@ -37,7 +37,20 @@
 <a href="javascript:EditNewTool()" title="Add a new tool" class="button button-pill ">+ Tool</a>
 </span>  
 <hr/>
-<input type=hidden readonly name=dfTools class=dftEnfasi2 size=10 value='Analysis'></p>
+<?php
+  if ($process == 'AN') {
+    echo "<input type=hidden readonly name=dfTools class=dftEnfasi2 size=10 value='Analysis'>";
+    $buttonAN = " checked ";
+    $buttonAC = " ";
+  }
+  else {
+    echo "<input type=hidden readonly name=dfTools class=dftEnfasi2 size=10 value='Acquisition'>";
+    $buttonAN = " ";
+    $buttonAC = " checked ";
+  }
+
+?>
+</p>
 <!--p class=dftTextGrassetto>EVIDENCE project</p-->
 <!--p><a href=# onClick=removePanel();>Remove FeaturePanel</a></p-->
 <!--p><a href=# onClick=addPanel();>Add FeaturePanel</a></p-->
@@ -67,8 +80,10 @@
   echo "<tr><td>&nbsp;</td></tr>";
   echo '<tr class=dftText align=center><td>';
   echo '<div id="radio">';
-  echo '<input type="radio" id="rbAnalysis" name="rbProcess" value="AN" checked  onClick=javascript:SetData("Analysis");><label for="rbAnalysis">Analysis</label>';
-  echo '<input type="radio" id="rbAcquisition" name="rbProcess" value="AC" onClick=javascript:SetData("Acquisition");><label for="rbAcquisition">Acquisition</label>';
+  echo '<input type="radio" id="rbAnalysis" name="rbProcess" value="AN" ' . $buttonAN;
+  echo ' onClick=javascript:SetData("Analysis");><label for="rbAnalysis">Analysis</label>';
+  echo '<input type="radio" id="rbAcquisition" name="rbProcess" value="AC" ' . $buttonAC;
+  echo 'onClick=javascript:SetData("Acquisition");><label for="rbAcquisition">Acquisition</label>';
   echo "<input type=hidden name=process value=" . $process . ">";
   echo '</div></td></tr>';
   echo "<tr><td>&nbsp;</td></tr>";
@@ -87,17 +102,21 @@
 
   
   $arrayCategoriesAN = createArrayCategory("AN");
+  $arrayCategoriesAC =   createArrayCategory("AC");
+
 
   echo "<tr class='dftText'>";
-  showCategory($arrayCategoriesAN, $codeCategory, "CodeCategory", "CheckCategory", "AN", "<br/>");
+  if ($process == "AN")
+    showCategory($arrayCategoriesAN, $codeCategory, "CodeCategory", "CheckCategory", "AN", "<br/>");
+  else
+    showCategory($arrayCategoriesAC, $codeCategory, "CodeCategory", "CheckCategory", "AC", "<br/>");
   echo "</tr>";
 
   
 // SELECT CodeCategoryAN, categories related to Analysis
   createSelectHidden($arrayCategoriesAN, "CodeCategoryAN");
   
-  $arrayCategoriesAC =   createArrayCategory("AC");
-
+  
   // SELECT CodeCategoryAC, categories related to Acqusition
   createSelectHidden($arrayCategoriesAC, "CodeCategoryAC"); 
 

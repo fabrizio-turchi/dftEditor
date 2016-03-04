@@ -272,3 +272,5 @@
 20160303 - 1606 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=137 AND CodeCategory <>"01.02.02." AND Process="AN"
 20160303 - 1606 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=137 AND CodeCategory <>"01.02.02." AND Process="AN"
 20160303 - 1608 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=135 AND CodeCategory <>"01.02.02." AND Process="AN"
+20160304 - 0914 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=150 AND CodeCategory <>"10." AND Process="AN"
+20160304 - 0923 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=1442 AND CodeCategory <>"04." AND Process="AC"
