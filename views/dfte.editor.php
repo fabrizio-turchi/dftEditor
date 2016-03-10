@@ -209,23 +209,23 @@ function ProcessQuery() {
     echo '<p class="dftTextGrassetto">EVIDENCE project - Digital Forensics Tools Catalgoue Results: <span class=dftEnfasi5>found tools <span class=dftEnfasi2>' . $totTools . '</span></p>';
     
     echo "<div id=tblTools>";
-    echo '<table  border=1 width="95%">';
-    echo "<tr class=dftTextGrassetto align=center><td width='15%'>Tool&nbsp;";
+    echo '<table  border=1 style="width:100%; table-layout-fixed; word-wrap:break-word;">';
+    echo "<tr class=dftTextGrassetto align=center><td style='width:15%'>Tool&nbsp;";
     echo "<a href=javascript:Sort('Tool','DESC');><img src=images/dfte.order.down.png></a>&nbsp;";
     echo "<a href=javascript:Sort('Tool','ASC');><img src=images/dfte.order.up.png></a>";
     echo "<br/>(Developer)</td>";
-    echo "<td width='20%'>Description</td>";
-    echo "<td width='15%'>Category&nbsp;";
+    echo "<td style='width:20%'>Description</td>";
+    echo "<td style='width:15%'>Category&nbsp;";
     echo "<a href=javascript:Sort('tblCategories.Category','DESC');><img src=images/dfte.order.down.png></a>&nbsp;";
     echo "<a href=javascript:Sort('tblCategories.Category','ASC');><img src=images/dfte.order.up.png></a></td>";
-    echo "<td width='15%'>License&nbsp;";
+    echo "<td style='width:10%'>License&nbsp;";
     echo "<a href=javascript:Sort('LicenseType','DESC');><img src=images/dfte.order.down.png></a>&nbsp;";
     echo "<a href=javascript:Sort('LicenseType','ASC');><img src=images/dfte.order.up.png></a></td>";
-    echo "<td width='10%'>O.S.&nbsp;";
+    echo "<td style='width:10%'>O.S.&nbsp;";
     echo "<a href=javascript:Sort('OperatingSystem','DESC');><img src=images/dfte.order.down.png></a>&nbsp;";
     echo "<a href=javascript:Sort('OperatingSystem','ASC');><img src=images/dfte.order.up.png></a></td>";
-    echo "<td width='15%'>Features / Values</td>";   
-    echo "<td width='15%'>Useful<br/>References</td></tr>";      
+    echo "<td style='width:15%'>Features / Values</td>";   
+    echo "<td style='width:15%'>Useful<br/>References</td></tr>";      
     
     $idTool = "";
     
