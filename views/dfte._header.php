@@ -12,6 +12,18 @@
 <script type="text/javascript" src="./scripts/buttons.js"></script>
 <script type="text/javascript" src="./scripts/dfte.js"></script>
 <link rel="stylesheet" href="./scripts/dfte.css" type="text/css"> 
+<link rel="stylesheet" type="text/css" href="scripts/tooltipster.css" />
+<script type="text/javascript" src="scripts/jquery.tooltipster.min.js"></script>
+<link rel="stylesheet" type="text/css" href="scripts/themes/tooltipster-light.css" />
+<script>
+    $(document).ready(function() {
+        $('.tooltip').tooltipster({
+            theme: 'tooltipster-light',
+            animation: 'grow',
+        });
+    });
+</script>
+
 </head>
 <body>
 <a target="Evidence web site" href="http://www.evidenceproject.eu">

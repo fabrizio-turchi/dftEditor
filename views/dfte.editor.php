@@ -113,13 +113,13 @@ function ProcessQuery() {
             $valueFinalFilter = " AND (" . $valueFinalFilter . ") ";            
         if (in_array($codeCategory . $process, $codesLeavesNoFeatures)) {    // weird case:  category without children, a leaf, and without features! 
             //fwrite($debugFile, "category " . $codeCategory . " no features \n");
-            $qryToolsBase  = 'SELECT DISTINCT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Url, TestReport, ';
+            $qryToolsBase  = 'SELECT DISTINCT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Description, Url, TestReport, ';
             $qryToolsBase .= 'Category, tblCategories.CodeCategory ';
             $qryToolsBase .= 'FROM tblTools, tblCategories, tblToolsCategories ';
             $qryToolsBase .= 'WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory ';
         }
         else {
-            $qryToolsBase  = 'SELECT DISTINCT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Url, TestReport, ';
+            $qryToolsBase  = 'SELECT DISTINCT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Description, Url, TestReport, ';
             $qryToolsBase .= 'Category, tblCategories.CodeCategory, Feature, tblToolsFeatures.IdFeature, DeeperLevel ';
             $qryToolsBase .= 'FROM tblTools, tblCategories, tblToolsCategories, tblToolsFeatures, tblFeatures ';
             $qryToolsBase .= 'WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory ';
@@ -176,7 +176,7 @@ function ProcessQuery() {
     $nTools = $rsTools->rowCount();
         
     if ($nTools == 0) {   // special cases to be managed in a different way: for example selecting only O.S. with value Hardware 
-        $qryToolsBase  = 'SELECT DISTINCT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Url, TestReport, ';
+        $qryToolsBase  = 'SELECT DISTINCT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Url, TestReport, Description, ';
         $qryToolsBase .= 'Category, tblCategories.CodeCategory ';
         $qryToolsBase .= 'FROM tblTools, tblCategories, tblToolsCategories ';
         $qryToolsBase .= 'WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory ';
@@ -210,10 +210,12 @@ function ProcessQuery() {
     
     echo "<div id=tblTools>";
     echo '<table  border=1 width="95%">';
-    echo "<tr class=dftTextGrassetto align=center><td width='25%'>Tool&nbsp;";
+    echo "<tr class=dftTextGrassetto align=center><td width='15%'>Tool&nbsp;";
     echo "<a href=javascript:Sort('Tool','DESC');><img src=images/dfte.order.down.png></a>&nbsp;";
-    echo "<a href=javascript:Sort('Tool','ASC');><img src=images/dfte.order.up.png></a></td>";
-    echo "<td width='20%'>Category&nbsp;";
+    echo "<a href=javascript:Sort('Tool','ASC');><img src=images/dfte.order.up.png></a>";
+    echo "<br/>(Developer)</td>";
+    echo "<td width='20%'>Description</td>";
+    echo "<td width='15%'>Category&nbsp;";
     echo "<a href=javascript:Sort('tblCategories.Category','DESC');><img src=images/dfte.order.down.png></a>&nbsp;";
     echo "<a href=javascript:Sort('tblCategories.Category','ASC');><img src=images/dfte.order.up.png></a></td>";
     echo "<td width='15%'>License&nbsp;";
@@ -222,7 +224,8 @@ function ProcessQuery() {
     echo "<td width='10%'>O.S.&nbsp;";
     echo "<a href=javascript:Sort('OperatingSystem','DESC');><img src=images/dfte.order.down.png></a>&nbsp;";
     echo "<a href=javascript:Sort('OperatingSystem','ASC');><img src=images/dfte.order.up.png></a></td>";
-    echo "<td width='25%'>Features / Values</td></tr>"; 
+    echo "<td width='15%'>Features / Values</td>";   
+    echo "<td width='15%'>Useful<br/>References</td></tr>";      
     
     $idTool = "";
     
@@ -233,7 +236,7 @@ function ProcessQuery() {
         }                            
         else {            
             if ($i > 0)     // not first cycle
-                echo  "</td></tr>";
+                echo  "</tr>";
   
             prepareRow($rowTool);   
             $idTool = $sameTool;         
@@ -1720,7 +1723,10 @@ function prepareRow($rowTool) {
       
     echo '<a class="dftLink"  target="_blank" title="Tool web address" href="' . $rowTool["Url"] . '">' . $rowTool["Tool"] . '</a>';
 
- 
+    if (trim($rowTool["Developer"]) == "")
+        ;
+    else
+        echo "<br/>(" . $rowTool["Developer"] . ")<br/>";
     
     if ($rowTool["TestReport"] == 'S') {
         $qryTests = "SELECT ReportUrl, NoteTest FROM tblToolsReports WHERE IdTool=" . $rowTool["IdTool"] . ' AND Process="' . $rowTool["Process"]  . '" ';
@@ -1748,6 +1754,25 @@ function prepareRow($rowTool) {
         echo ' (' . $rowTool["IdTool"] . ')';
 
     echo '</td>';
+
+    $pos = strpos($rowTool["Description"], ".");
+    $len = strlen($rowTool["Description"]);
+    
+    $sentence = $rowTool["Description"];
+
+    if ($pos > -1) {        // if there is a full stop
+
+        if ($len < $pos + MAX_OFFSET)
+            $sentence = $rowTool["Description"];
+        else {
+            $sentence = substr($rowTool["Description"], 0, $pos + 1);
+            $sentence .= ' ... <span class=dftEnfasi5><span class=tooltip title="';   
+            $sentence .= $rowTool["Description"] . '">';
+            $sentence .= "more</span></span>";
+        }
+    }
+
+    echo '<td>' . $sentence . '</td>';
     
     $wholeCategory = $rowTool["Category"];
     $xCode = $rowTool["CodeCategory"];
@@ -1784,9 +1809,28 @@ function prepareRow($rowTool) {
         echo  '<td><a class="dftEnfasi2" title="Tools of the same o.s." href=javascript:ViewToolOs("' . $sTemp . '");>' . $rowTool["OperatingSystem"]. '</a></td>';
 		}        
         
-    echo '<td class=dftEnfasi5>';
-    
-    valueFeature($rowTool);            
+    echo '<td class=dftEnfasi5>';    
+    valueFeature($rowTool); 
+    echo "</td>";
+
+    $qryReferences = "SELECT * FROM tblToolsUsefulReferences WHERE IdTool=" . $rowTool["IdTool"];
+    $rsReferences = $db_conn->query($qryReferences);
+    $nReferences = $rsReferences->rowCount();
+    $line = "";
+    for ($i=0; $i<$nReferences; $i++) {
+        $rowReference = $rsReferences->fetch();
+        $note = $rowReference["ReferenceNote"];
+        if ($note == "")
+            $note = "*reference*";
+
+        $line .= '<a title="Useful reference ' . $note . '" target="_blank" href="';
+
+        if (substr($rowReference["ReferenceUrl"], 0, 4) == "http")
+            $line .= $rowReference["ReferenceUrl"] . '">' . $note . '</a><br/>';
+        else
+            $line .= "http://" . $rowReference["ReferenceUrl"] . '">' . $note . '</a><br/>';
+    }
+    echo "<td>$line</td>";           
 }
 
 
