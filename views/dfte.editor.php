@@ -322,7 +322,6 @@ function EditTool($idTool, $status) {
 
     $qryBanned   = 'SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=' . $idTool . ' AND ';
     $qryBanned  .= 'CodeCategory <>"' . $selectedCodeCategory . '" AND Process="' . $process . '"';
-    writeLog("qryBanned=$qryBanned");
 
     $rsBanned    = $db_conn->query($qryBanned);
     $nBanned   = $rsBanned->rowCount();
