@@ -31,7 +31,7 @@
 <input name=editorIdTool class=dftHidden value="">
 <input name=editorSelectedCodeCategory class=dftHidden value="">
 
-<p class=dftPulsanti align=center>Forensics Tools Catalogue Editor (<a class=dftLink target="_blank" href=dfte.help.html
+<p class=dftPulsanti align=center>Forensics Tools Catalogue Editor (<a class=dftLink target="_blank" href=views/dfte.help.html
  title='Help on Catalogue Editing'>?</a>)<br/>
 <span class="button-wrap">
 <a href="javascript:EditNewTool()" title="Add a new tool" class="button button-pill ">+ Tool</a>

@@ -660,10 +660,10 @@ function UpdateTool($idTool, $operation) {
 
   $qryFeatures = 'SELECT IdFeature FROM tblFeatures WHERE CodeCategory=:CodeCategory AND Visible="S" ORDER BY NumberFeature';
 //fwrite($debugFile, $qtyFeatures . "\n");
-	$stmt = $db_conn->prepare($qryFeatures);
-	$stmt->bindParam(':CodeCategory', $_POST["editorCodeCategory"], PDO::PARAM_STR);
-	$stmt->execute();
-	$nFeatures	 = $stmt->rowCount();        
+	$stmtF = $db_conn->prepare($qryFeatures);
+	$stmtF->bindParam(':CodeCategory', $_POST["editorCodeCategory"], PDO::PARAM_STR);
+	$stmtF->execute();
+	$nFeatures	 = $stmtF->rowCount();        
 	$error = "";
 	if ($nFeatures == 0)   // codeCategory doesn't have feature or category wasn't selected, in this case there is no filter on FeaturesValues
     $valueFinalFilter = "";
@@ -671,7 +671,7 @@ function UpdateTool($idTool, $operation) {
     $valueFinalFilter = "";
     $valueFilter = "";
     for ($i=0; $i<$nFeatures; $i++) {
-    	$rowFeature = $stmt->fetch();
+      $rowFeature = $stmtF->fetch(); 
 			$qryValues = "SELECT Value FROM tblFeaturesValues WHERE IdFeature =" . $rowFeature["IdFeature"] . " ORDER BY Value";
       $rsValues = $db_conn->query($qryValues);
       $nValues = $rsValues->rowCount();
@@ -682,12 +682,12 @@ function UpdateTool($idTool, $operation) {
         	try {
         		$qryUpdate  = "INSERT INTO tblEditorToolsFeatures (IdEditorTool, IdFeature, CodeCategory, ValueFeature) VALUES ";
 						$qryUpdate .= "(:IdEditorTool, :IdFeature, :CodeCategory, :ValueFeature)";
-						$stmt = $db_conn->prepare($qryUpdate);
-						$stmt->bindParam(':IdEditorTool', $idRecord, PDO::PARAM_INT);
-						$stmt->bindParam(':IdFeature', $rowFeature["IdFeature"], PDO::PARAM_INT);
-						$stmt->bindParam(':CodeCategory', $_POST["editorCodeCategory"], PDO::PARAM_STR);
-						$stmt->bindParam(':ValueFeature', $rowValue["Value"], PDO::PARAM_INT);
-						$stmt->execute(); 
+						$stmtU = $db_conn->prepare($qryUpdate);
+						$stmtU->bindParam(':IdEditorTool', $idRecord, PDO::PARAM_INT);
+						$stmtU->bindParam(':IdFeature', $rowFeature["IdFeature"], PDO::PARAM_INT);
+						$stmtU->bindParam(':CodeCategory', $_POST["editorCodeCategory"], PDO::PARAM_STR);
+						$stmtU->bindParam(':ValueFeature', $rowValue["Value"], PDO::PARAM_INT);
+						$stmtU->execute(); 
 					}
 					catch (PDOException $e) {
     				$error = $e->getMessage();
@@ -775,13 +775,13 @@ function UpdateTool($idTool, $operation) {
     }
     else {
       $qryEvaluation = "SELECT * FROM tblToolsEvaluations WHERE IdTool=:IdTool AND EvaluationUserName=:EvaluationUserName";
-      $stmt = $db_conn->prepare($qryEvaluation);
-      $stmt->bindParam(':IdTool', $idTool, PDO::PARAM_INT);
-      $stmt->bindParam(':EvaluationUserName', $_SESSION['user_name'], PDO::PARAM_STR);
-      $stmt->execute();
-      $nEvaluations = $stmt->rowCount();
+      $stmtEv = $db_conn->prepare($qryEvaluation);
+      $stmtEv->bindParam(':IdTool', $idTool, PDO::PARAM_INT);
+      $stmtEv->bindParam(':EvaluationUserName', $_SESSION['user_name'], PDO::PARAM_STR);
+      $stmtEv->execute();
+      $nEvaluations = $stmtEv->rowCount();
       if ($nEvaluations > 0) {
-        $rowEvaluation  = $stmt->fetch();
+        $rowEvaluation  = $stmtEv->fetch();
         $qryEvaluation  = "UPDATE tblToolsEvaluations SET Satisfaction=:Satisfaction, FrequencyUse=:FrequencyUse WHERE ";
         $qryEvaluation .= "IdToolEvaluation=:IdToolEvaluation";
         $stmt = $db_conn->prepare($qryEvaluation);
