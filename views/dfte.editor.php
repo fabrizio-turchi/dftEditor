@@ -39,7 +39,7 @@
       EditTool($editorIdTool, "afterInsert");
       break;
 
-    case "approval": // show the values of the added tool
+    case "approval": // show the values of the added/modified tools
       ApprovalShow();
       break;
 
@@ -51,6 +51,12 @@
 
     case "approvalAll": // commit all pending updating/insert tools
       ApprovalAllTools();
+      break;
+
+    case "refusalSingle": // commit a single updating/insert of a tool
+      $idEditorTool = $_POST["idApprovalTool"];
+      $msgAlert = True;
+      RefusalSingleTool($idEditorTool, $msgAlert); 
       break;
 
 		case "":		// no action has been requested
@@ -979,14 +985,13 @@ function sendEmailApproval($mail, $toolName, $user, $operation) {
 */
 
 function ApprovalShow() {
-  global $db_conn, $codesLeavesNoFeatures;
+  global $db_conn, $codesLeavesNoFeatures, $process;
 
   $qryApproval   = "SELECT tblEditorTools.*, tblCategories.CodeCategory, Category, pastCodeCategory FROM tblEditorTools, ";
   $qryApproval  .= "tblEditorToolsCategories, tblCategories ";
   $qryApproval  .= "WHERE tblEditorTools.IdEditorTool = tblEditorToolsCategories.IdEditorTool AND ";
   $qryApproval  .= "tblEditorToolsCategories.CodeCategory = tblCategories.CodeCategory AND ";
-  $qryApproval  .= "EditingStatus='Pending' ORDER BY EditingDate DESC";
-
+  $qryApproval  .= "EditingStatus='Pending' AND tblCategories.Process='" . $process . "' ORDER BY EditingDate DESC";
   $rsApprovals    = $db_conn->query($qryApproval);
   $nApprovals   = $rsApprovals->rowCount(); 
 
@@ -997,14 +1002,17 @@ function ApprovalShow() {
     echo 'Approve All!</a></span>';
     echo "</a></td></tr></table>";
     echo "<div id=tblTools>";
-    echo '<table  border=1 width="95%">';
-    echo "<tr class=dftTextGrassetto align=center><td width='20%'>Tool&nbsp;</td>";
+    echo '<table  border=1 width="100%">';
+    echo "<tr class=dftTextGrassetto align=center><td width='15%'>Tool&nbsp;</td>";
+    echo "<td width='20%'>Description</td>";
     echo "<td width='15%'>Category&nbsp</td>";
     echo "<td width='10%'>License&nbsp</td>";
     echo "<td width='10%'>O.S.&nbsp;</td>";
-    echo "<td width='20%'>Features / Values</td>"; 
+    echo "<td width='15%'>Features / Values</td>"; 
+    echo "<td style='width:10%'>Useful<br/>References</td>";
     echo "<td width='10%'>User/Date</td>"; 
-    echo "<td width='5%'>Approval</td></tr>"; 
+    echo "<td width='5%'>Approval</td>"; 
+    echo "<td width='5%'>Refusal</td></tr>"; 
   } 
   else {
     echo "No updating/insert tools in pending state";
@@ -1178,6 +1186,7 @@ function ApprovalSingleTool($idEditorTool, $msgAlert) {
   $cmd  = $currentFolder  . "/tools/dfte.send.mail.ssl.approval.py ";
   $cmd .= '"' . $rowEditorTool["Tool"] . '" ';
   $cmd .= $rowEditorTool["EditingUserName"] . " " . $userEmail;
+  windowAlert("cmd=$cmd");
   exec($cmd . " > /dev/null &");
  
 
@@ -1189,6 +1198,69 @@ function ApprovalSingleTool($idEditorTool, $msgAlert) {
   if ($msgAlert)
     echo "<script>Approval();</script>"; 
 }
+
+function RefusalSingleTool($idEditorTool, $msgAlert) {
+  global $db_conn;
+
+  date_default_timezone_set('Europe/Rome');
+
+  $db_conn->beginTransaction();
+
+  try { 
+// update tblEditorTools: set Approval fields: ApprovalUser, ApprovalDate, ApprovalTime and EditingStatus=Refused!
+    $qryUpdate  = "UPDATE tblEditorTools SET  ApprovalDate=:ApprovalDate, ApprovalTime=:ApprovalTime, ";
+    $qryUpdate .= "ApprovalUser=:ApprovalUser, EditingStatus=:EditingStatus WHERE IdEditorTool=:IdEditorTool";
+
+    $stmt = $db_conn->prepare($qryUpdate);
+
+    $stmt->bindValue(':ApprovalDate', date("Ymd"), PDO::PARAM_STR);
+    $stmt->bindValue(':ApprovalTime', date("Hi"), PDO::PARAM_STR);
+    $stmt->bindParam(':ApprovalUser', $_SESSION['user_name'], PDO::PARAM_STR);
+    $stmt->bindParam(':IdEditorTool', $idEditorTool, PDO::PARAM_INT);
+    $stmt->bindValue(':EditingStatus', "Refused", PDO::PARAM_STR);
+    $stmt->execute();
+  }
+  catch (PDOException $e) {
+    $error = $e->getMessage();
+    echo "<p class=dftError>Error: " . $error . "</p>";
+    $db_conn->rollback();
+    exit; 
+  } 
+  $db_conn->commit();
+
+  $qryEditorTool  = "SELECT Tool, EditingUserName FROM tblEditorTools WHERE ";
+  $qryEditorTool .= "tblEditorTools.IdEditorTool=:IdEditorTool";
+  $stmt = $db_conn->prepare($qryEditorTool);
+  $stmt->bindParam(':IdEditorTool', $idEditorTool, PDO::PARAM_INT);
+  $stmt->execute();
+  $rowEditorTool = $stmt->fetch();
+
+// retrieve email EditingUserName: it could be stored in the tblEditorTools table, 
+// but the user can change his/her own email address
+
+  $qryUser = 'SELECT user_email FROM tblUsers WHERE user_name=:user_name';
+  $stmt = $db_conn->prepare($qryUser);
+  $stmt->bindParam(':user_name', $rowEditorTool["EditingUserName"], PDO::PARAM_STR);
+  $stmt->execute();
+  $rowUser   = $stmt->fetch();   
+  
+  // send email message to the user for noticing the refusal of his/her modification
+  $currentFolder = getcwd();
+  $cmd  = $currentFolder  . "/tools/dfte.send.mail.ssl.refusal.py ";
+  $cmd .= '"' . $rowEditorTool["Tool"] . '" ';
+  $cmd .= $rowEditorTool["EditingUserName"] . " " . $rowUser["user_email"];
+  $refusalId = "refusalMotivation_" . $idEditorTool;
+  $cmd .= ' "' . $_POST[$refusalId] . '"';
+  windowAlert("cmd=$cmd");
+  exec($cmd . " > /dev/null &");
+  if ($msgAlert) {
+    $msgRefused  = "Tool " . $rowEditorTool["Tool"] . " has been refused and an email sent to ";
+    $msgRefused .= $rowEditorTool["EditingUserName"];
+    windowAlert($msgRefused);
+    echo "<script>Approval();</script>"; 
+  }
+}  
+
 
 function deleteCategoriesFeatures($pastIdTool, $pastCodeCategory) {
   global $db_conn;
@@ -1765,7 +1837,7 @@ function prepareRow($rowTool) {
             $sentence = $rowTool["Description"];
         else {
             $sentence = substr($rowTool["Description"], 0, $pos + 1);
-            $sentence .= ' ... <span class=dftEnfasi5><span class=tooltip title="';   
+            $sentence .= ' ... <span class=dftEnfasi2><span class=tooltip title="';   
             $sentence .= $rowTool["Description"] . '">';
             $sentence .= "more</span></span>";
         }
@@ -1838,7 +1910,7 @@ function prepareRow($rowTool) {
 */
 function prepareApprovalRow($rowTool) {
     global $codesLeavesNoFeatures, $db_conn;
-    
+
     $lineDebug = '';
 
     $offset = -3;
@@ -1871,6 +1943,26 @@ function prepareApprovalRow($rowTool) {
         echo ' (' . $rowTool["IdEditorTool"] . ')';
 
     echo '</td>';
+
+
+    $pos = strpos($rowTool["Description"], ".");
+    $len = strlen($rowTool["Description"]);
+    
+    $sentence = $rowTool["Description"];
+
+    if ($pos > -1) {        // if there is a full stop
+
+        if ($len < $pos + MAX_OFFSET)
+            $sentence = $rowTool["Description"];
+        else {
+            $sentence = substr($rowTool["Description"], 0, $pos + 1);
+            $sentence .= ' ... <span class=dftEnfasi5><span class=tooltip title="';   
+            $sentence .= $rowTool["Description"] . '">';
+            $sentence .= "more</span></span>";
+        }
+    }
+
+    echo '<td>' . $sentence . '</td>';
     
     $wholeCategory = $rowTool["Category"];
     $xCode = $rowTool["CodeCategory"];
@@ -1897,6 +1989,25 @@ function prepareApprovalRow($rowTool) {
     valueApprovalFeature($rowTool);
     echo "</td>";
 
+    $qryReferences = "SELECT * FROM tblEditorToolsUsefulReferences WHERE IdEditorTool=" . $rowTool["IdEditorTool"];
+    $rsReferences = $db_conn->query($qryReferences);
+    $nReferences = $rsReferences->rowCount();
+    $line = "";
+    for ($i=0; $i<$nReferences; $i++) {
+        $rowReference = $rsReferences->fetch();
+        $note = $rowReference["ReferenceNote"];
+        if ($note == "")
+            $note = "*reference*";
+
+        $line .= '<a title="Useful reference ' . $note . '" target="_blank" href="';
+
+        if (substr($rowReference["ReferenceUrl"], 0, 4) == "http")
+            $line .= $rowReference["ReferenceUrl"] . '">' . $note . '</a><br/>';
+        else
+            $line .= "http://" . $rowReference["ReferenceUrl"] . '">' . $note . '</a><br/>';
+    }
+    echo "<td>$line</td>"; 
+
     $editingDate = $rowTool["EditingDate"];
     $editingDate = substr($editingDate, 6, 2) . "/" . substr($editingDate, 4, 2) . "/" . substr($editingDate, 0, 4);
 
@@ -1912,7 +2023,12 @@ function prepareApprovalRow($rowTool) {
     }      
 
     echo "<td align=center><a title='" . $title . "' href=javascript:ApprovalSingleTool('" . $rowTool["IdEditorTool"] . "');>";
-    echo "<img src=images/" . $img . "></a></td></tr>";            
+    echo "<img src=images/" . $img . "></a></td>";    
+    echo "<td align=center><a title='" . $title . "' href=javascript:RefusalSingleTool('" . $rowTool["IdEditorTool"] . "');>";
+    echo "<img src=images/dfte.cancel.png></a><br/>";
+    echo "<textarea placeholder='Write refusal motivations' rows=2 cols=15 name=refusalMotivation";
+    echo "_" . $rowTool["IdEditorTool"] . "></textarea>";
+    echo "</td></tr>";            
 }
 
 /*

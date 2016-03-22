@@ -418,6 +418,12 @@ function ApprovalAllTool() {
   document.frmSearch.submit();
 }
 
+function RefusalSingleTool(idEditorTool) {
+  document.frmSearch.dftRequest.value="refusalSingle";
+  document.frmSearch.idApprovalTool.value = idEditorTool;
+  document.frmSearch.submit();
+}
+
 function ToolValuesCheckBoxesOnOff(feature, maxValues, arrayToolValues) {
     var i, j, str, cbFeature;
     var numToolValues
@@ -459,11 +465,13 @@ function ToolValuesCheckBoxesOnOff(feature, maxValues, arrayToolValues) {
 
 function Search() {
     document.frmSearch.dftRequest.value="query";
+    /*
     idx = document.frmSearch.CodeCategory.selectedIndex;
     if (idx == 0) {                     // Category is set on All, it is not allowed
         window.alert("Please, select a Category");
         return false;
     }
+    */
     document.frmSearch.submit();
 }
 
