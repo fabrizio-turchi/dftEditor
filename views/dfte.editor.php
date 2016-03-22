@@ -1186,7 +1186,6 @@ function ApprovalSingleTool($idEditorTool, $msgAlert) {
   $cmd  = $currentFolder  . "/tools/dfte.send.mail.ssl.approval.py ";
   $cmd .= '"' . $rowEditorTool["Tool"] . '" ';
   $cmd .= $rowEditorTool["EditingUserName"] . " " . $userEmail;
-  windowAlert("cmd=$cmd");
   exec($cmd . " > /dev/null &");
  
 
@@ -1251,7 +1250,6 @@ function RefusalSingleTool($idEditorTool, $msgAlert) {
   $cmd .= $rowEditorTool["EditingUserName"] . " " . $rowUser["user_email"];
   $refusalId = "refusalMotivation_" . $idEditorTool;
   $cmd .= ' "' . $_POST[$refusalId] . '"';
-  windowAlert("cmd=$cmd");
   exec($cmd . " > /dev/null &");
   if ($msgAlert) {
     $msgRefused  = "Tool " . $rowEditorTool["Tool"] . " has been refused and an email sent to ";
