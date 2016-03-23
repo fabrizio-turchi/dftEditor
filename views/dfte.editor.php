@@ -385,7 +385,7 @@ function EditTool($idTool, $status) {
   echo " class=dftText size=50 value="' . $rowTool["Developer"] . '"></td>';
 
   echo "<td class=dftTextGrassetto>Web site</td>";
-  echo '<td><input text name=editorUrl size=50 required value="' . $rowTool["Url"] . '"></td></tr>';
+  echo '<td><input text name=editorUrl size=50 required placeholder="Tool web site (required)" value="' . $rowTool["Url"] . '"></td></tr>';
  
   echo "<input type=hidden name=editorReportsValues>";
   echo "<tr class=dftText>";

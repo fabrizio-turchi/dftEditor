@@ -321,15 +321,16 @@ function EditNewTool() {
 
 function CommitNewTool() {
     
-  var fCheck, fReports, fValues;
+  var fCheck, fReports, fValues, formError;
 
+  formError = true;
   fCheck = document.frmSearch.editorToolName;
   fCheck.value  = fCheck.value.trim();
   
 
   if (fCheck.value == "") {
     window.alert("Tool name is mandatory");
-    return false;
+    formError= false;
   }
 
   fCheck = document.frmSearch.editorUrl;
@@ -337,14 +338,14 @@ function CommitNewTool() {
 
   if (fCheck.value == "") {
     window.alert("Tool web site is mandatory");
-    return false;
+    formError= false;
   }
 
   fCheck = document.frmSearch.editorCodeCategory;
 
   if (fCheck.selectedIndex == 0) {
     window.alert("Tool must have a specific Category");
-    return false;
+    formError= false;
   }
 
   fReports = document.frmSearch.editorReports;
@@ -364,8 +365,10 @@ function CommitNewTool() {
 
   //window.alert(fValues.value);
 
-  document.frmSearch.dftRequest.value="commitNew";
-  document.frmSearch.submit();
+  if (formError) {
+    document.frmSearch.dftRequest.value="commitNew";
+    document.frmSearch.submit();
+  }
 }  
 
 /*
