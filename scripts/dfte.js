@@ -166,9 +166,9 @@ function CheckGeneral(fCategoryName, fCategories, whichDiv) {
                 }                        
                            
                 if (checkboxNumber > 1) // if there are more than one Features, for the selected Category, they are divided by <hr>
-                    labelRadio = "<hr><input type=checkbox " + classFeature + "checked name=" + cbSuffix + idFeature;
+                    labelRadio = "<hr><input type=checkbox " + classFeature + " name=" + cbSuffix + idFeature;
                 else                    // the first Feature is shown without the <hr> separator
-                    labelRadio = "<input type=checkbox " + classFeature + "checked name=" + cbSuffix + idFeature;    
+                    labelRadio = "<input type=checkbox " + classFeature + " name=" + cbSuffix + idFeature;    
                         
 // check box on the left side of the Feature for the selection/deselection of all the related Values                
                 labelRadio = labelRadio + " onClick=javascript:SelectDeselectValues('" + cbSuffix + idFeature + "');>"; 
@@ -189,7 +189,7 @@ function CheckGeneral(fCategoryName, fCategories, whichDiv) {
                             idx = j + 1;
                             nameCheckTwo = idFeature + "_" + idx;
                             valueCheckTwo = aValues[idx];
-                            create_box_double (nameCheckOne, valueCheckOne, nameCheckTwo, valueCheckTwo, classRadio, sName, boxName, cbSuffix);
+                            create_box_double(nameCheckOne, valueCheckOne, nameCheckTwo, valueCheckTwo, classRadio, sName, boxName, cbSuffix);
                             j = j + 1;
                         }                                                                
                     }
@@ -754,21 +754,21 @@ function create_box (nameCheck, valueCheck, boxName, cbSuffix) {
 
 function create_box_special (nameCheck, valueCheck, classRadio, sLabel, boxName, cbSuffix) {
     if (sLabel == "") // if Feature is not visible, in this case classRadio is class=dftHidden
-        cb01 = $('<input type=checkbox ' + classRadio + 'checked name=' + cbSuffix + nameCheck + ' value="' + valueCheck + '">')
+        cb01 = $('<input type=checkbox ' + classRadio + ' name=' + cbSuffix + nameCheck + ' value="' + valueCheck + '">')
     else
-        cb01 = $('<input type=checkbox ' + classRadio + 'checked name=' + cbSuffix + nameCheck + ' value="' + valueCheck + '">' + valueCheck + '<br/>')        
+        cb01 = $('<input type=checkbox ' + classRadio + ' name=' + cbSuffix + nameCheck + ' value="' + valueCheck + '">' + valueCheck + '<br/>')        
     //cb01.appendTo("#box");
     cb01.appendTo(boxName);
 }
 
 function create_box_double (nameCheck1, valueCheck1, nameCheck2, valueCheck2, classRadio, sLabel, boxName, cbSuffix) {
     if (sLabel == "") {
-        cbOne = '<tr><td><input type=checkbox ' + classRadio + 'checked name=' + cbSuffix + nameCheck1 + ' value="' + valueCheck1 + '"></td>';
-        cbTwo = '<td><input type=checkbox ' + classRadio + 'checked name=' + cbSuffix + nameCheck2 + ' value="' + valueCheck2 + '"></td></tr>' ; 
+        cbOne = '<tr><td><input type=checkbox ' + classRadio + ' name=' + cbSuffix + nameCheck1 + ' value="' + valueCheck1 + '"></td>';
+        cbTwo = '<td><input type=checkbox ' + classRadio + ' name=' + cbSuffix + nameCheck2 + ' value="' + valueCheck2 + '"></td></tr>' ; 
     }        
     else {
-        cbOne = '<tr><td><input type=checkbox ' + classRadio + 'checked name=' + cbSuffix + nameCheck1 + ' value="' + valueCheck1 + '">' + valueCheck1 + '</td>';
-        cbTwo = '<td><input type=checkbox ' + classRadio + 'checked name=' + cbSuffix + nameCheck2 + ' value="' + valueCheck2 + '">' + valueCheck2 + '</td></tr>';
+        cbOne = '<tr><td><input type=checkbox ' + classRadio + ' name=' + cbSuffix + nameCheck1 + ' value="' + valueCheck1 + '">' + valueCheck1 + '</td>';
+        cbTwo = '<td><input type=checkbox ' + classRadio + ' name=' + cbSuffix + nameCheck2 + ' value="' + valueCheck2 + '">' + valueCheck2 + '</td></tr>';
     }                
     
     cbDouble = $(cbOne + cbTwo)        
@@ -777,22 +777,22 @@ function create_box_double (nameCheck1, valueCheck1, nameCheck2, valueCheck2, cl
 
 function create_box_double_end (nameCheck, valueCheck, classRadio, sLabel, boxName, cbSuffix) {
     if (sLabel == "")
-        cb01 = $('<tr><td colspan=2><input type=checkbox ' + classRadio + 'checked name=' + cbSuffix + nameCheck + ' value="' + valueCheck + '"></td></tr>')
+        cb01 = $('<tr><td colspan=2><input type=checkbox ' + classRadio + ' name=' + cbSuffix + nameCheck + ' value="' + valueCheck + '"></td></tr>')
     else
-        cb01 = $('<tr><td colspan=2><input type=checkbox ' + classRadio + 'checked name=' + cbSuffix + nameCheck + ' value="' + valueCheck + '">' + valueCheck + '</td></tr>')  
+        cb01 = $('<tr><td colspan=2><input type=checkbox ' + classRadio + ' name=' + cbSuffix + nameCheck + ' value="' + valueCheck + '">' + valueCheck + '</td></tr>')  
     cb01.appendTo(boxName);
 }
 
 
 function create_box_bold (nameCheck, valueCheck, boxName, cbSuffix) {
-	cb01 = $("<hr><strong><input type=checkbox  checked onClick=javascript:SelectDeselect('" + cbSuffix + nameCheck + "'); name=" + nameCheck + ' value="' + valueCheck + '">' + valueCheck + '</strong><br/>')
+	cb01 = $("<hr><strong><input type=checkbox   onClick=javascript:SelectDeselect('" + cbSuffix + nameCheck + "'); name=" + nameCheck + ' value="' + valueCheck + '">' + valueCheck + '</strong><br/>')
     cb01.appendTo(boxName);
 }
 
 function create_box_subfeatures (aName, aValue, boxName) {
-    s = '<input type=checkbox checked   name=' + aName[0] + ' value="'  + aValue[0] + '">' + aValue[0];
-    s += '<input type=checkbox checked name=' + aName[1] + ' value="' + aValue[1] + '">' + aValue[1]; 
-    s += '<input type=checkbox checked name=' + aName[2] + ' value="' + aValue[2] + '">' + aValue[2] + '<br/>'; 
+    s = '<input type=checkbox    name=' + aName[0] + ' value="'  + aValue[0] + '">' + aValue[0];
+    s += '<input type=checkbox  name=' + aName[1] + ' value="' + aValue[1] + '">' + aValue[1]; 
+    s += '<input type=checkbox  name=' + aName[2] + ' value="' + aValue[2] + '">' + aValue[2] + '<br/>'; 
 	cb01 = $(s)
     cb01.appendTo(boxName); 
 }
