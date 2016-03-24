@@ -97,6 +97,7 @@ function ProcessQuery() {
                     $varPost = (string)$idFeature . "_" . $m;
                     if (isset($_POST[$varPost])) {  
                         $checkedValues++;
+                        SetCheckboxValue($varPost);
                         // fwrite($debugFile, "varPost=" . $varPost . "\n");          
                         $valueFilter .= ' ValueFeature="' . trim($_POST[$varPost]) . '" OR ';
                     }
@@ -251,6 +252,15 @@ function ProcessQuery() {
     }  
   echo "</table></div>";
 }	
+
+ /*
+ *--- function SetCheckboxValue()
+ *
+ *    checkboxValue is the check box element to flag, setting is checked property to True
+ */
+ function SetCheckboxValue($checkboxValue) {
+  echo "<script>SetCbValue('" . $checkboxValue . "');</script>"; 
+ }
 
 /*
 *---	function EditTool(): shows the form fields to change the selected tool data
@@ -2080,9 +2090,7 @@ function setJavascriptField($field, $value) {
   echo "<script>document.frmSearch." . $field . ".value=" . $value . ";</script>" ;
 }
 
-function windowAlert($msg) {
-    echo "<script>window.alert('" . $msg .  "');</script>";
-}    
+  
 
 function writeLog($msg) {
   date_default_timezone_set('Europe/Rome');

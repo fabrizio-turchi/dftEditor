@@ -291,6 +291,12 @@ function CheckGeneral(fCategoryName, fCategories, whichDiv) {
     }        
 }        
   
+function SetCbValue(cbName) {
+  for (i=0; i<document.frmSearch.length; i++) {
+    if (document.frmSearch.elements[i].name == cbName)
+        document.frmSearch.elements[i].checked = true;
+  }
+}  
 /*
 *---  EditTool(): creates the form for preparing an update on the tool, uniquely identified by idTool, the form fields are shon in the editor DIV
 *

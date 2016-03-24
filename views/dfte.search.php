@@ -178,7 +178,7 @@
     echo '<input type=hidden name=nToolsAN value=' . $nToolsAN . '>';
     echo '<input type=hidden name=nToolsAC value=' . $nToolsAC . '>';
 //  if a query has been run, the Features Panels must be initialized, otherwise it occurs only when the event onChange is triggered
-    if ($dftRequest == "query")
+    if ($dftRequest == "query") 
         echo "<script>CheckCategory();</script>";
 
 ?>
@@ -367,5 +367,9 @@ function createSelectHiddenFeatures($array, $fieldName, $process) {
       echo "<option value=''></option>";
   }            
   echo "</select>";  
-}  
+} 
+
+function windowAlert($msg) {
+    echo "<script>window.alert('" . $msg .  "');</script>";
+}   
 ?>
