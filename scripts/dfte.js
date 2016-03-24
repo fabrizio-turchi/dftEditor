@@ -354,6 +354,55 @@ function CommitNewTool() {
     formError= false;
   }
 
+  fProcess              = document.frmSearch.process;
+    
+  if (fProcess.value == "AN")         // case Analysis
+    fFeatures   = document.frmSearch.FeaturesAN;
+  else                                // case Acquisition
+    fFeatures   = document.frmSearch.FeaturesAC;
+
+  fCategories=document.frmSearch.editorCodeCategory
+  idxCategory = fCategories.selectedIndex;
+  idFeatures = fFeatures.options[idxCategory].value;
+  aIdFeatures = idFeatures.split("#");           // extract all IdFeatures that are separated by #
+  
+
+  fFeaturesValues = document.frmSearch.FeaturesValues;
+  cbValueChecked = false;
+  for (k=0; k<aIdFeatures.length; k++) {          // loop over all IdFeatures of the selected Category
+    idFeatureValues = aIdFeatures[k].split("@");  // the value contains idFeature, DeeperLevel and Visible separated by @
+    idFeature = idFeatureValues[0];
+    for (m=0; m<fFeaturesValues.length; m++) {
+      if (fFeaturesValues.options[m].value == idFeature) { 
+        aValues = fFeaturesValues.options[m].text.split("#");
+        for (s=0; s<aValues.length; s++) {
+          cbValue = "editor" + idFeature + "_" + s;
+          for (n=0; n<document.frmSearch.length; n++) {
+            if (document.frmSearch.elements[n].name==cbValue) {
+              if (document.frmSearch.elements[n].checked) {
+                cbValueChecked = true;
+                break;
+              }
+            }
+          }
+          if (cbValueChecked)
+            break;
+        }    
+        if (cbValueChecked)
+          break;
+      }
+      if (cbValueChecked)
+      break;
+    }
+    if (cbValueChecked)
+      break;
+  }              
+  
+  if (!cbValueChecked) {
+    window.alert("Tool must have at least a Value checked in the selected Category");
+    formError= false;
+  } 
+  
   fReports = document.frmSearch.editorReports;
   fReferences = document.frmSearch.editorReferences;
   
