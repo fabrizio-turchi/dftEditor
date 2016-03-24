@@ -327,16 +327,26 @@ function EditNewTool() {
 
 function CommitNewTool() {
     
-  var fCheck, fReports, fValues, formError;
+ formError = CheckEditorFormFields();
+  //window.alert(fValues.value);
 
-  formError = true;
+  if (!formError) {
+    document.frmSearch.dftRequest.value="commitNew";
+    document.frmSearch.submit();
+  }
+}  
+
+function CheckEditorFormFields() {
+   var fCheck, fReports, fValues, formError;
+
+  formError = false;
   fCheck = document.frmSearch.editorToolName;
   fCheck.value  = fCheck.value.trim();
   
 
   if (fCheck.value == "") {
     window.alert("Tool name is mandatory");
-    formError= false;
+    formError= true;
   }
 
   fCheck = document.frmSearch.editorUrl;
@@ -344,14 +354,14 @@ function CommitNewTool() {
 
   if (fCheck.value == "") {
     window.alert("Tool web site is mandatory");
-    formError= false;
+    formError= true;
   }
 
   fCheck = document.frmSearch.editorCodeCategory;
 
   if (fCheck.selectedIndex == 0) {
     window.alert("Tool must have a specific Category");
-    formError= false;
+    formError= true;
   }
 
   fProcess              = document.frmSearch.process;
@@ -400,7 +410,7 @@ function CommitNewTool() {
   
   if (!cbValueChecked) {
     window.alert("Tool must have at least a Value checked in the selected Category");
-    formError= false;
+    formError= true;
   } 
   
   fReports = document.frmSearch.editorReports;
@@ -418,13 +428,9 @@ function CommitNewTool() {
   for(i=0; i<fReferences.length; i++)
     fValues.value += fReferences.options[i].value + "@";
 
-  //window.alert(fValues.value);
+  return formError;
 
-  if (formError) {
-    document.frmSearch.dftRequest.value="commitNew";
-    document.frmSearch.submit();
-  }
-}  
+}
 
 /*
 *---  UpdateTool(): run an update on the tool, uniquely identified by idTool, the form fields are shon in the editor DIV
@@ -436,23 +442,26 @@ function UpdateTool() {
     var fReports, fValues, idx;
 
     document.frmSearch.dftRequest.value="commitUpdate";
-  
-    fReports = document.frmSearch.editorReports;
-    fReferences = document.frmSearch.editorReferences;
-    fValues  = document.frmSearch.editorReportsValues;
+    formError = CheckEditorFormFields();
 
-    fValues.value = '';
+    // fReports = document.frmSearch.editorReports;
+    // fReferences = document.frmSearch.editorReferences;
+    // fValues  = document.frmSearch.editorReportsValues;
+
+    // fValues.value = '';
     
-    for(i=0; i<fReports.length; i++)
-        fValues.value += fReports.options[i].value + "@";
+    // for(i=0; i<fReports.length; i++)
+    //     fValues.value += fReports.options[i].value + "@";
 
-    fValues  = document.frmSearch.editorReferencesValues;
-    fValues.value = '';
+    // fValues  = document.frmSearch.editorReferencesValues;
+    // fValues.value = '';
     
-    for(i=0; i<fReferences.length; i++)
-        fValues.value += fReferences.options[i].value + "@";
-
-    document.frmSearch.submit();
+    // for(i=0; i<fReferences.length; i++)
+    //     fValues.value += fReferences.options[i].value + "@";
+    if (!formError) {
+      document.frmSearch.dftRequest.value="commitNew";
+      document.frmSearch.submit();
+    }
 } 
 
 function Approval() {
