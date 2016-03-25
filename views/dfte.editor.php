@@ -841,7 +841,7 @@ function UpdateTool($idTool, $operation) {
   $cmd  = $currentFolder  . "/tools/dfte.send.mail.ssl.py ";
 
   if ($operation == "I")
-    $cmd .= $p_toolName . " "; 
+    $cmd .= '"' . $p_toolName . '" '; 
   else 
     $cmd .= '"' . $_POST["dbToolName"] . '" ';
 

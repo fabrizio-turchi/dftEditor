@@ -110,3 +110,13 @@
 20160322 12:15:54 - successfully sent the refusal mail: HFS Explorer fabrizio
 20160325 08:20:58 - Operation parameter is wrong, values admissable are U or I, value=fabri
 20160325 08:20:58 - Operation parameter is wrong, values admissable are U or I, value=fabri
+20160325 08:40:05 - successfully sent the mail: aFabri fabrizio fabrizio.turchi@ittig.cnr.it I fabrizio.turchi@ittig.cnr.it
+20160325 08:40:05 - successfully sent the mail: aFabri fabrizio fabrizio.turchi@ittig.cnr.it I mattia.epifani@ittig.cnr.it
+20160325 09:07:28 - Usage: /Users/fabrizio/Documents/ittig/evidence/wp4/dft.editor/tools/dfte.send.mail.ssl.py toolName user userEmail operation ltsEmailAdmins
+20160325 09:07:28 - Usage: /Users/fabrizio/Documents/ittig/evidence/wp4/dft.editor/tools/dfte.send.mail.ssl.py toolName user userEmail operation ltsEmailAdmins
+20160325 09:09:24 - Usage: /Users/fabrizio/Documents/ittig/evidence/wp4/dft.editor/tools/dfte.send.mail.ssl.py toolName user userEmail operation ltsEmailAdmins
+20160325 09:09:24 - Usage: /Users/fabrizio/Documents/ittig/evidence/wp4/dft.editor/tools/dfte.send.mail.ssl.py toolName user userEmail operation ltsEmailAdmins
+20160325 09:10:21 - successfully sent the mail: c Fabri fabrizio fabrizio.turchi@ittig.cnr.it I fabrizio.turchi@ittig.cnr.it
+20160325 09:10:21 - successfully sent the mail: c Fabri fabrizio fabrizio.turchi@ittig.cnr.it I mattia.epifani@ittig.cnr.it
+20160325 09:11:39 - successfully sent the mail: d fabri fabrizio fabrizio.turchi@ittig.cnr.it I mattia.epifani@ittig.cnr.it
+20160325 09:11:39 - successfully sent the mail: d fabri fabrizio fabrizio.turchi@ittig.cnr.it I fabrizio.turchi@ittig.cnr.it
