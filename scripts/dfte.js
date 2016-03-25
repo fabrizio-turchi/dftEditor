@@ -441,7 +441,7 @@ function CheckEditorFormFields() {
 function UpdateTool() {
     var fReports, fValues, idx;
 
-    document.frmSearch.dftRequest.value="commitUpdate";
+    
     formError = CheckEditorFormFields();
 
     // fReports = document.frmSearch.editorReports;
@@ -459,7 +459,7 @@ function UpdateTool() {
     // for(i=0; i<fReferences.length; i++)
     //     fValues.value += fReferences.options[i].value + "@";
     if (!formError) {
-      document.frmSearch.dftRequest.value="commitNew";
+      document.frmSearch.dftRequest.value="commitUpdate";
       document.frmSearch.submit();
     }
 } 
