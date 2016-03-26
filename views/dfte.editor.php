@@ -2,7 +2,7 @@
 <img  src='images/dfte.evidence.logo.acronym.png' alt='EVIDENCE Project' border='0'></a> European Project<br/>
 <?php 
   // code catageory leaves without features: in these case the query can't contain tables tblFeatures and tblToolsFeatures
-    $codesLeavesNoFeatures= array("01.05.AN", "07.AN", "07.02.AN", "08.02.AN", "08.03.AN", "08.04.AN", "08.05.AN", "01.02.AC", "AC", "AN");         
+    $codesLeavesNoFeatures= array("01.02.03.AN", "01.05.AN", "07.AN", "07.02.AN", "08.02.AN", "08.03.AN", "08.04.AN", "08.05.AN", "01.02.AC", "AC", "AN");         
 
 	switch($dftRequest) {
 		case "query":	// query on Catalogue to identify the tool to be modified	

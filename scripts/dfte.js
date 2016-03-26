@@ -338,6 +338,9 @@ function CommitNewTool() {
 
 function CheckEditorFormFields() {
    var fCheck, fReports, fValues, formError;
+   var aCodesLeavesNoFeatures = ["01.02.03.AN", "01.05.AN", "07.AN", "07.02.AN", "08.02.AN", "08.03.AN", "08.04.AN", "08.05.AN", "01.02.AC", "AC", "AN"];         
+   var sCode, codeCategoryNoFeature, idxNoFeature;
+
 
   formError = false;
   fCheck = document.frmSearch.editorToolName;
@@ -376,42 +379,47 @@ function CheckEditorFormFields() {
   idFeatures = fFeatures.options[idxCategory].value;
   aIdFeatures = idFeatures.split("#");           // extract all IdFeatures that are separated by #
   
+  sCode = fCategories.options[idxCategory].value;
+  codeCategoryNoFeature = sCode + fProcess.value;
+  idxNoFeature = aCodesLeavesNoFeatures.indexOf(codeCategoryNoFeature);
 
-  fFeaturesValues = document.frmSearch.FeaturesValues;
-  cbValueChecked = false;
-  for (k=0; k<aIdFeatures.length; k++) {          // loop over all IdFeatures of the selected Category
-    idFeatureValues = aIdFeatures[k].split("@");  // the value contains idFeature, DeeperLevel and Visible separated by @
-    idFeature = idFeatureValues[0];
-    for (m=0; m<fFeaturesValues.length; m++) {
-      if (fFeaturesValues.options[m].value == idFeature) { 
-        aValues = fFeaturesValues.options[m].text.split("#");
-        for (s=0; s<aValues.length; s++) {
-          cbValue = "editor" + idFeature + "_" + s;
-          for (n=0; n<document.frmSearch.length; n++) {
-            if (document.frmSearch.elements[n].name==cbValue) {
-              if (document.frmSearch.elements[n].checked) {
-                cbValueChecked = true;
-                break;
-              }
+  if (idxNoFeature > 0) {  
+    cbValueChecked = false;
+    fFeaturesValues = document.frmSearch.FeaturesValues;
+    for (k=0; k<aIdFeatures.length; k++) {          // loop over all IdFeatures of the selected Category
+        idFeatureValues = aIdFeatures[k].split("@");  // the value contains idFeature, DeeperLevel and Visible separated by @
+        idFeature = idFeatureValues[0];
+        for (m=0; m<fFeaturesValues.length; m++) {
+            if (fFeaturesValues.options[m].value == idFeature) { 
+                aValues = fFeaturesValues.options[m].text.split("#");
+                for (s=0; s<aValues.length; s++) {
+                    cbValue = "editor" + idFeature + "_" + s;
+                    for (n=0; n<document.frmSearch.length; n++) {
+                        if (document.frmSearch.elements[n].name==cbValue) {
+                            if (document.frmSearch.elements[n].checked) {
+                                cbValueChecked = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (cbValueChecked)
+                        break;
+                }    
+                if (cbValueChecked)
+                    break;
             }
-          }
-          if (cbValueChecked)
-            break;
-        }    
+            if (cbValueChecked)
+                break;
+        }
         if (cbValueChecked)
-          break;
-      }
-      if (cbValueChecked)
-      break;
+            break;
+    }              
+    if (!cbValueChecked) {
+        window.alert("Tool must have at least a Value checked in the selected Category");
+        formError= true;
     }
-    if (cbValueChecked)
-      break;
-  }              
+  }
   
-  if (!cbValueChecked) {
-    window.alert("Tool must have at least a Value checked in the selected Category");
-    formError= true;
-  } 
   
   fReports = document.frmSearch.editorReports;
   fReferences = document.frmSearch.editorReferences;
