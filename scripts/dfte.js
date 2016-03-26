@@ -382,8 +382,9 @@ function CheckEditorFormFields() {
   sCode = fCategories.options[idxCategory].value;
   codeCategoryNoFeature = sCode + fProcess.value;
   idxNoFeature = aCodesLeavesNoFeatures.indexOf(codeCategoryNoFeature);
+  //window.alert(codeCategoryNoFeature + "/" + idxNoFeature);
 
-  if (idxNoFeature > 0) {  
+  if (idxNoFeature == -1) {  
     cbValueChecked = false;
     fFeaturesValues = document.frmSearch.FeaturesValues;
     for (k=0; k<aIdFeatures.length; k++) {          // loop over all IdFeatures of the selected Category
