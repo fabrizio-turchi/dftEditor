@@ -338,7 +338,7 @@ function CommitNewTool() {
 
 function CheckEditorFormFields() {
    var fCheck, fReports, fValues, formError;
-   var aCodesLeavesNoFeatures = ["01.02.03.AN", "01.05.AN", "07.AN", "07.02.AN", "08.02.AN", "08.03.AN", "08.04.AN", "08.05.AN", "01.02.AC", "AC", "AN"];         
+   var aCodesLeavesNoFeatures = ["01.02.03.AN", "01.05.AN", "07.AN", "07.02.AN", "08.01.AN", "08.02.AN", "08.03.AN", "08.04.AN", "08.05.AN", "01.02.AC", "01.05.AC", "03.02.AC", "03.03.AC", "AC", "AN"];         
    var sCode, codeCategoryNoFeature, idxNoFeature;
 
 

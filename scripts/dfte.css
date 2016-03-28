@@ -167,7 +167,7 @@ td>a:focus { color: #C11B17; text-decoration: underline; } */
 .dftTextRadio { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: x-small; font-style: normal; font-weight: bold; color: #000000 }
 .dftButtons { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: small; font-style: normal; font-weight: bold; color: #000000 }
 .dftTextGrassettoBig { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: small; font-style: normal; font-weight: bold; color: #000000 }
-.dftTextItalic { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: x-small; font-style: italic; font-weight: normal; color: #000000 }
+.dftTextItalic { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: x-small; font-style: italic; font-weight: normal; color:#000000; }
 .dftTextItalicRidotto { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: xx-small; font-style: italic; font-weight: normal; color: #000000 }
 .dftTextLink { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: x-small; font-style: normal; font-weight: bold; color: #000066; text-decoration: underline}
 .dftEnfasi1 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; font-size: x-small; color: #FF9900}
