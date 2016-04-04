@@ -1,7 +1,7 @@
     <?php   
     define("FILE_OUT_CATALOGUE", "dftc.boxsize2016.php");
     define("FILE_OUT_EDITOR", "config/dfte.features.panel.php");
-    define("SPACE_FEATURE", 20);        // space taken by each check box of the  Feature in the Panel
+    define("SPACE_FEATURE", 30);        // space taken by each check box of the  Feature in the Panel
     define("SPACE_VALUE", 20);          // space taken by each couple of Values on the Features Panel
     define("SPACE_HR", 25);             // space taken by <hr> for Features separator   
     define("SIZE_BASE", 50);            // default size Features Panel

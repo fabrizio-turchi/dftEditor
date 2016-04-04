@@ -1,8 +1,8 @@
-<img src='images/dfte.evidence.logo.arrow.png' >
-<img  src='images/dfte.evidence.logo.acronym.png' alt='EVIDENCE Project' border='0'></a> European Project<br/>
+<!-- img src='images/dfte.evidence.logo.arrow.png' >
+<img  src='images/dfte.evidence.logo.acronym.png' alt='EVIDENCE Project' border='0'></a> European Project<br/ -->
 <?php 
   // code catageory leaves without features: in these case the query can't contain tables tblFeatures and tblToolsFeatures
-    $codesLeavesNoFeatures= array("01.AN","01.02.AN","01.02.03.AN","01.03.AN","01.05.AN","02.AN","02.04.AN","02.05.AN","02.06.AN","03.01.AN","03.01.05.AN","03.01.06.AN","03.01.07.AN","03.02.AN","03.03.AN","07.AN","07.02.AN","08.AN","08.01.AN","08.02.AN","08.03.AN","01.AC","01.02.AC","01.05.AC","03.01.AC","03.01.06.AC","03.01.07.AC","03.02.AC","03.03.AC);
+    $codesLeavesNoFeatures= array("01.AN","01.02.AN","01.02.03.AN","01.03.AN","01.05.AN","02.AN","02.04.AN","02.05.AN","02.06.AN","03.01.AN","03.01.05.AN","03.01.06.AN","03.01.07.AN","03.02.AN","03.03.AN","07.AN","07.02.AN","08.AN","08.01.AN","08.02.AN","08.03.AN","01.AC","01.02.AC","01.05.AC","03.01.AC","03.01.06.AC","03.01.07.AC","03.02.AC","03.03.AC");
 
 	switch($dftRequest) {
 		case "query":	// query on Catalogue to identify the tool to be modified	

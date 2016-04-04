@@ -31,7 +31,7 @@ option.mainOption { font-weight : bold; }
 	/*background-color:grey;*/
 	/*border:1px solid grey;*/
 	position: relative;
-	top:-100.6%;
+	top:-110.6%; 
 	left:32%;
 	overflow: scroll;
 	vertical-align: top;
@@ -79,14 +79,14 @@ ul li {
 	line-height: 16px;
 }
 #container {
-	width:350px;
+	width:150px;
 	height:250px;
 	background-color:whitesmoke;
 	border:0px;
 	display:block;
 }
 #box {
-	width:350px;
+	width:150px;
 	height:220px;
 	/*background-color:gold;*/
 	/*background-color:#DAB5A4;*/
@@ -167,7 +167,7 @@ td>a:focus { color: #C11B17; text-decoration: underline; } */
 .dftTextRadio { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: x-small; font-style: normal; font-weight: bold; color: #000000 }
 .dftButtons { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: small; font-style: normal; font-weight: bold; color: #000000 }
 .dftTextGrassettoBig { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: small; font-style: normal; font-weight: bold; color: #000000 }
-.dftTextItalic { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: x-small; font-style: italic; font-weight: normal; color:#000000; }
+.dftTextItalic { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: x-small; font-style: italic; font-weight: normal; color:#000000;}
 .dftTextItalicRidotto { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: xx-small; font-style: italic; font-weight: normal; color: #000000 }
 .dftTextLink { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: x-small; font-style: normal; font-weight: bold; color: #000066; text-decoration: underline}
 .dftEnfasi1 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; font-size: x-small; color: #FF9900}

@@ -166,7 +166,7 @@
 ?>
 </table>
 <p>&nbsp;</p>
-<div id="container"><p class='dftTextItalic' align='center'>Features Panel</p>
+<div id="container"><p class='dftTextItalic' align='left'>Features Panel</p>
 <div id="box">Box con testo</div>
 </div>
 <input type=hidden name=sort value='Tool'>
