@@ -180,15 +180,15 @@ class PHPExcel_Shared_Date
      */
     public static function PHPToExcel($dateValue = 0, $adjustToTimezone = false, $timezone = null)
     {
-        $saveTimeZone = date_default_timezone_get();
-        date_default_timezone_set('UTC');
+        //$saveTimeZone = date_default_timezone_get();
+        //date_default_timezone_set('UTC');
         $retValue = false;
         if ((is_object($dateValue)) && ($dateValue instanceof DateTime)) {
             $retValue = self::FormattedPHPToExcel($dateValue->format('Y'), $dateValue->format('m'), $dateValue->format('d'), $dateValue->format('H'), $dateValue->format('i'), $dateValue->format('s'));
         } elseif (is_numeric($dateValue)) {
             $retValue = self::FormattedPHPToExcel(date('Y', $dateValue), date('m', $dateValue), date('d', $dateValue), date('H', $dateValue), date('i', $dateValue), date('s', $dateValue));
         }
-        date_default_timezone_set($saveTimeZone);
+        //date_default_timezone_set($saveTimeZone);
 
         return $retValue;
     }
