@@ -1,8 +1,8 @@
 <!-- img src='images/dfte.evidence.logo.arrow.png' >
 <img  src='images/dfte.evidence.logo.acronym.png' alt='EVIDENCE Project' border='0'></a> European Project<br/ -->
 <?php 
-  // code catageory leaves without features: in these case the query can't contain tables tblFeatures and tblToolsFeatures
-    $codesLeavesNoFeatures= array("01.AN","01.02.AN","01.02.03.AN","01.03.AN","01.05.AN","02.AN","02.04.AN","02.05.AN","02.06.AN","03.01.AN","03.01.05.AN","03.01.06.AN","03.01.07.AN","03.02.AN","03.03.AN","07.AN","07.02.AN","08.AN","08.01.AN","08.02.AN","08.03.AN","01.AC","01.02.AC","01.05.AC","03.01.AC","03.01.06.AC","03.01.07.AC","03.02.AC","03.03.AC");
+  // code catageory leaves without features: in these case the query can't contain tables tblFeatures and tblToolsFeatures. The last two values are for managing the case when no Category is selected (All value)
+    $codesLeavesNoFeatures= array("01.AN","01.02.AN","01.02.03.AN","01.03.AN","01.05.AN","02.AN","02.04.AN","02.05.AN","02.06.AN","03.01.AN","03.01.05.AN","03.01.06.AN","03.01.07.AN","03.02.AN","03.03.AN","07.AN","07.02.AN","08.AN","08.01.AN","08.02.AN","08.03.AN","01.AC","01.02.AC","01.05.AC","03.01.AC","03.01.06.AC","03.01.07.AC","03.02.AC","03.03.AC", "AN", "AC");
 
 	switch($dftRequest) {
 		case "query":	// query on Catalogue to identify the tool to be modified	
@@ -75,94 +75,95 @@ function ProcessQuery() {
 /*    
 * --- catch values/features for filtering the values in the table tblToolsFeatures (see function valueFeature()
 */    
-    $qryFeatures = 'SELECT IdFeature, DeeperLevel FROM tblFeatures WHERE CodeCategory="' . $codeCategory  . '" AND Visible="S" ORDER BY NumberFeature';
-    //fwrite($debugFile, $qtyFeatures . "\n");
-    $rsFeatures	     = $db_conn->query($qryFeatures);
-    $nFeatures	 = $rsFeatures->rowCount();        
-    if ($nFeatures == 0)   // codeCategory doesn't have feature or category wasn't selected, in this case there is no filter on FeaturesValues
-        $valueFinalFilter = "";
-    else {
-        $valueFinalFilter = "";
-        $valueFilter = "";
-        for ($i=0; $i < $nFeatures; $i++) {
-            $rowFeature = $rsFeatures->fetch();
-                //fwrite($debugFile, "single/multi feature, line 96 \n");
-                $idFeature = $rowFeature["IdFeature"];
-                //$valueFilter = '(tblToolsFeatures.IdFeature=' . $idFeature . ' AND ( ';
-                $qryValues = "SELECT Value FROM tblFeaturesValues WHERE IdFeature =" . $idFeature;
-                $checkedValues = 0;
-                $rsValues = $db_conn->query($qryValues);
-                $nValues = $rsValues->rowCount();
-                for ($m=0; $m < $nValues; $m++) {   // loop for managing the feature values that have been selected/checked
-                    $varPost = (string)$idFeature . "_" . $m;
-                    if (isset($_POST[$varPost])) {  
-                        $checkedValues++;
-                        SetCheckboxValue($varPost);
-                        // fwrite($debugFile, "varPost=" . $varPost . "\n");          
-                        $valueFilter .= ' ValueFeature="' . trim($_POST[$varPost]) . '" OR ';
-                    }
-                }         //after each feature              
-                if ($checkedValues > 0)  { // if all values are deselected there is no conditions on them!
-                    $valueFilter = substr($valueFilter, 0, -4); 
-                    $valueFinalFilter .= '(tblToolsFeatures.IdFeature=' . $idFeature . ' AND ( ' . $valueFilter;
-                    $valueFinalFilter .=  ')) OR ';
-                    $valueFilter = "";
-                    //fwrite($debugFile, "valueFinalFilter=" . $valueFinalFilter . "\n");
-                    
-                }                     
-            
-        }                            
-            $valueFinalFilter = substr($valueFinalFilter, 0, -3);            
-    }
-    
-    
-        if (strlen($valueFinalFilter) > 0) 
-            $valueFinalFilter = " AND (" . $valueFinalFilter . ") ";            
-        if (in_array($codeCategory . $process, $codesLeavesNoFeatures)) {    // weird case:  category without children, a leaf, and without features! 
-            //fwrite($debugFile, "category " . $codeCategory . " no features \n");
-            $qryToolsBase  = 'SELECT DISTINCT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Description, Url, TestReport, ';
-            $qryToolsBase .= 'Category, tblCategories.CodeCategory ';
-            $qryToolsBase .= 'FROM tblTools, tblCategories, tblToolsCategories ';
-            $qryToolsBase .= 'WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory ';
+  $qryFeatures = 'SELECT IdFeature, DeeperLevel FROM tblFeatures WHERE CodeCategory="' . $codeCategory  . '" AND Visible="S" ORDER BY NumberFeature';
+  //fwrite($debugFile, $qtyFeatures . "\n");
+  $rsFeatures	     = $db_conn->query($qryFeatures);
+  $nFeatures	 = $rsFeatures->rowCount();        
+  if ($nFeatures == 0)   // codeCategory doesn't have feature or category wasn't selected, in this case there is no filter on FeaturesValues
+      $valueFinalFilter = "";
+  else {
+    $valueFinalFilter = "";
+    $valueFilter = "";
+    for ($i=0; $i < $nFeatures; $i++) {
+      $rowFeature = $rsFeatures->fetch();
+      //fwrite($debugFile, "single/multi feature, line 96 \n");
+      $idFeature = $rowFeature["IdFeature"];
+      //$valueFilter = '(tblToolsFeatures.IdFeature=' . $idFeature . ' AND ( ';
+      $qryValues = "SELECT Value FROM tblFeaturesValues WHERE IdFeature =" . $idFeature;
+      $checkedValues = 0;
+      $rsValues = $db_conn->query($qryValues);
+      $nValues = $rsValues->rowCount();
+      for ($m=0; $m < $nValues; $m++) {   // loop for managing the feature values that have been selected/checked
+        $varPost = (string)$idFeature . "_" . $m;
+        if (isset($_POST[$varPost])) {  
+          $checkedValues++;
+          SetCheckboxValue($varPost);
+          // fwrite($debugFile, "varPost=" . $varPost . "\n");          
+          $valueFilter .= ' ValueFeature="' . trim($_POST[$varPost]) . '" OR ';
         }
-        else {
-            $qryToolsBase  = 'SELECT DISTINCT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Description, Url, TestReport, ';
-            $qryToolsBase .= 'Category, tblCategories.CodeCategory, Feature, tblToolsFeatures.IdFeature, DeeperLevel ';
-            $qryToolsBase .= 'FROM tblTools, tblCategories, tblToolsCategories, tblToolsFeatures, tblFeatures ';
-            $qryToolsBase .= 'WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory ';
-            $qryToolsBase .= 'AND tblTools.IdTool = tblToolsFeatures.IdTool  AND tblCategories.CodeCategory = tblToolsFeatures.CodeCategory ';
-            $qryToolsBase .= 'AND tblToolsFeatures.IdFeature=tblFeatures.IdFeature ' . $valueFinalFilter;
-        }              
+      }         //after each feature              
+      if ($checkedValues > 0)  { // if all values are deselected there is no conditions on them!
+          $valueFilter = substr($valueFilter, 0, -4); 
+          $valueFinalFilter .= '(tblToolsFeatures.IdFeature=' . $idFeature . ' AND ( ' . $valueFilter;
+          $valueFinalFilter .=  ')) OR ';
+          $valueFilter = "";
+          //fwrite($debugFile, "valueFinalFilter=" . $valueFinalFilter . "\n");
+          
+      }                     
+        
+    }                            
+    $valueFinalFilter = substr($valueFinalFilter, 0, -3);            
+  }
     
-    $furtherWhereCondition = "";
-    if ( $process == "")
-        ;
-    else
-        $furtherWhereCondition .= ' AND tblToolsCategories.Process="' . $process . '"  AND tblCategories.Process = "' . $process . '"'; 
+    
+  if (strlen($valueFinalFilter) > 0) 
+      $valueFinalFilter = " AND (" . $valueFinalFilter . ") ";  
+
+  if (in_array($codeCategory . $process, $codesLeavesNoFeatures)) {    // weird case:  category without children, a leaf, and without features! 
+      //fwrite($debugFile, "category " . $codeCategory . " no features \n");
+    $qryToolsBase  = 'SELECT DISTINCT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Description, Url, TestReport, ';
+    $qryToolsBase .= 'Category, tblCategories.CodeCategory ';
+    $qryToolsBase .= 'FROM tblTools, tblCategories, tblToolsCategories ';
+    $qryToolsBase .= 'WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory ';
+  }
+  else {
+    $qryToolsBase  = 'SELECT DISTINCT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Description, Url, TestReport, ';
+    $qryToolsBase .= 'Category, tblCategories.CodeCategory, Feature, tblToolsFeatures.IdFeature, DeeperLevel ';
+    $qryToolsBase .= 'FROM tblTools, tblCategories, tblToolsCategories, tblToolsFeatures, tblFeatures ';
+    $qryToolsBase .= 'WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory ';
+    $qryToolsBase .= 'AND tblTools.IdTool = tblToolsFeatures.IdTool  AND tblCategories.CodeCategory = tblToolsFeatures.CodeCategory ';
+    $qryToolsBase .= 'AND tblToolsFeatures.IdFeature=tblFeatures.IdFeature ' . $valueFinalFilter;
+  }              
+    
+  $furtherWhereCondition = "";
+  if ( $process == "")
+      ;
+  else
+    $furtherWhereCondition .= ' AND tblToolsCategories.Process="' . $process . '"  AND tblCategories.Process = "' . $process . '"'; 
+      
+  if ( $toolName == "")
+      ;
+  else
+      $furtherWhereCondition .= ' AND Tool LIKE "%' . $toolName . '%" ';      
         
-    if ( $toolName == "")
-        ;
-    else
-        $furtherWhereCondition .= ' AND Tool LIKE "%' . $toolName . '%" ';      
-        
-    if ( $license == "")
-        ;
-    else
-        $furtherWhereCondition .= ' AND LicenseType = "' . $license . '" ';              
+  if ( $license == "")
+      ;
+  else
+      $furtherWhereCondition .= ' AND LicenseType = "' . $license . '" ';              
 
     
-    if ( $os == "")
-        ;
-    else
-        $furtherWhereCondition .= ' AND OperatingSystem = "' . $os . '" ';      
+  if ( $os == "")
+      ;
+  else
+      $furtherWhereCondition .= ' AND OperatingSystem = "' . $os . '" ';      
             
    
                         
-    $furtherWhereCondition .= '  AND tblCategories.CodeCategory LIKE "' . $codeCategory . '%"';
-    
-    
-    $orderCondition = ' ORDER BY '     . $sort . ' ' . $direction;  
-    
+  $furtherWhereCondition .= '  AND tblCategories.CodeCategory LIKE "' . $codeCategory . '%"';
+  
+  
+  $orderCondition = ' ORDER BY '     . $sort . ' ' . $direction;  
+  
 /*--- the order on Features shows the same tool in different not contiguous rows and the results will be wrong!
 
     $pos = strpos($qryToolsBase, "tblFeatures");
@@ -172,84 +173,84 @@ function ProcessQuery() {
         $orderCondition .= " , tblFeatures.Feature";
 */        
                     
-    $qryToolsBase .=  $furtherWhereCondition;
+  $qryToolsBase .=  $furtherWhereCondition;
+      
+  if ($qryCatalogue == '')
+      $qryTools =  $qryToolsBase . $orderCondition;
+  else
+      $qryTools =  $qryCatalogue . $orderCondition;
+  
+  $rsTools	     = $db_conn->query($qryTools);
+  $nTools = $rsTools->rowCount();
         
-    if ($qryCatalogue == '')
-        $qryTools =  $qryToolsBase . $orderCondition;
-    else
-        $qryTools =  $qryCatalogue . $orderCondition;
-    
-    $rsTools	     = $db_conn->query($qryTools);
+  if ($nTools == 0) {   // special cases to be managed in a different way: for example selecting only O.S. with value Hardware 
+    $qryToolsBase  = 'SELECT DISTINCT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Url, TestReport, Description, ';
+    $qryToolsBase .= 'Category, tblCategories.CodeCategory ';
+    $qryToolsBase .= 'FROM tblTools, tblCategories, tblToolsCategories ';
+    $qryToolsBase .= 'WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory ';
+    $qryToolsBase .= $furtherWhereCondition;
+    $qryTools         = $qryToolsBase . $orderCondition;
+    $rsTools	         = $db_conn->query($qryTools);
     $nTools = $rsTools->rowCount();
-        
-    if ($nTools == 0) {   // special cases to be managed in a different way: for example selecting only O.S. with value Hardware 
-        $qryToolsBase  = 'SELECT DISTINCT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Url, TestReport, Description, ';
-        $qryToolsBase .= 'Category, tblCategories.CodeCategory ';
-        $qryToolsBase .= 'FROM tblTools, tblCategories, tblToolsCategories ';
-        $qryToolsBase .= 'WHERE tblTools.IdTool=tblToolsCategories.IdTool AND tblCategories.CodeCategory=tblToolsCategories.CodeCategory ';
-        $qryToolsBase .= $furtherWhereCondition;
-        $qryTools         = $qryToolsBase . $orderCondition;
-        $rsTools	         = $db_conn->query($qryTools);
-        $nTools = $rsTools->rowCount();
-    }        
+  }        
     
-    $aTools = array();
-    $arrayTools = $rsTools->fetchAll();
+  $aTools = array();
+  $arrayTools = $rsTools->fetchAll();
 
-    foreach($arrayTools as $rowTool) {
-        $value = $rowTool["IdTool"] . "@" . $rowTool["CodeCategory"]; 
-         if (in_array($value, $aTools))
-             ;
-        else
-            array_push($aTools, $value);             
-    }
-    $totTools = count($aTools);
+  foreach($arrayTools as $rowTool) {
+    $value = $rowTool["IdTool"] . "@" . $rowTool["CodeCategory"]; 
+     if (in_array($value, $aTools))
+       ;
+    else
+      array_push($aTools, $value);             
+  }
+  $totTools = count($aTools);
     
 /*    if ($nTools > 0)        // if the result set is empty the pointer move will show an error
         mysql_data_seek($rsTools, 0);
 */        
         
-    if ($_SERVER['REMOTE_ADDR'] == "127.0.0.1")    // localhost
-    	echo '<p class=dftText>*** start debug<br/>' . $qryTools . '<br/>***end debug</p>';
+  if ($_SERVER['REMOTE_ADDR'] == "127.0.0.1")    // localhost
+  	echo '<p class=dftText>*** start debug<br/>' . $qryTools . '<br/>***end debug</p>';
 
    
-    echo '<p class="dftTextGrassetto">EVIDENCE project - Digital Forensics Tools Catalgoue Results: <span class=dftEnfasi5>found tools <span class=dftEnfasi2>' . $totTools . '</span></p>';
-    
-    echo "<div id=tblTools>";
-    echo '<table  border=1 style="width:100%; table-layout-fixed; word-wrap:break-word;">';
-    echo "<tr class=dftTextGrassetto align=center><td style='width:15%'>Tool&nbsp;";
-    echo "<a href=javascript:Sort('Tool','DESC');><img src=images/dfte.order.down.png></a>&nbsp;";
-    echo "<a href=javascript:Sort('Tool','ASC');><img src=images/dfte.order.up.png></a>";
-    echo "<br/>(Developer)</td>";
-    echo "<td style='width:20%'>Description</td>";
-    echo "<td style='width:15%'>Category&nbsp;";
-    echo "<a href=javascript:Sort('tblCategories.Category','DESC');><img src=images/dfte.order.down.png></a>&nbsp;";
-    echo "<a href=javascript:Sort('tblCategories.Category','ASC');><img src=images/dfte.order.up.png></a></td>";
-    echo "<td style='width:10%'>License&nbsp;";
-    echo "<a href=javascript:Sort('LicenseType','DESC');><img src=images/dfte.order.down.png></a>&nbsp;";
-    echo "<a href=javascript:Sort('LicenseType','ASC');><img src=images/dfte.order.up.png></a></td>";
-    echo "<td style='width:10%'>O.S.&nbsp;";
-    echo "<a href=javascript:Sort('OperatingSystem','DESC');><img src=images/dfte.order.down.png></a>&nbsp;";
-    echo "<a href=javascript:Sort('OperatingSystem','ASC');><img src=images/dfte.order.up.png></a></td>";
-    echo "<td style='width:15%'>Features / Values</td>";   
-    echo "<td style='width:15%'>Useful<br/>References</td></tr>";      
-    
-    $idTool = "";
-    
-    $i = 0;
-    foreach($arrayTools as $rowTool) {
-        $sameTool = $rowTool["IdTool"] . $rowTool["CodeCategory"]; // same tool but different categories will produce different rows in the table! It's the case one tool many categories...
-        if ($sameTool  == $idTool) {
-        }                            
-        else {            
-            if ($i > 0)     // not first cycle
-                echo  "</tr>";
+  echo '<p class="dftTextGrassetto">EVIDENCE project - Digital Forensics Tools Catalgoue Results: <span class=dftEnfasi5>found tools <span class=dftEnfasi2>' . $totTools . '</span></p>';
   
-            prepareRow($rowTool);   
-            $idTool = $sameTool;         
-        }                
-        $i++;        
-    }  
+  echo "<div id=tblTools>";
+  echo '<table  border=1 style="width:100%; table-layout-fixed; word-wrap:break-word;">';
+  echo "<tr class=dftTextGrassetto align=center><td style='width:15%'>Tool&nbsp;";
+  echo "<a href=javascript:Sort('Tool','DESC');><img src=images/dfte.order.down.png></a>&nbsp;";
+  echo "<a href=javascript:Sort('Tool','ASC');><img src=images/dfte.order.up.png></a>";
+  echo "<br/>(Developer)</td>";
+  echo "<td style='width:20%'>Description</td>";
+  echo "<td style='width:15%'>Category&nbsp;";
+  echo "<a href=javascript:Sort('tblCategories.Category','DESC');><img src=images/dfte.order.down.png></a>&nbsp;";
+  echo "<a href=javascript:Sort('tblCategories.Category','ASC');><img src=images/dfte.order.up.png></a></td>";
+  echo "<td style='width:10%'>License&nbsp;";
+  echo "<a href=javascript:Sort('LicenseType','DESC');><img src=images/dfte.order.down.png></a>&nbsp;";
+  echo "<a href=javascript:Sort('LicenseType','ASC');><img src=images/dfte.order.up.png></a></td>";
+  echo "<td style='width:10%'>O.S.&nbsp;";
+  echo "<a href=javascript:Sort('OperatingSystem','DESC');><img src=images/dfte.order.down.png></a>&nbsp;";
+  echo "<a href=javascript:Sort('OperatingSystem','ASC');><img src=images/dfte.order.up.png></a></td>";
+  echo "<td style='width:15%'>Features / Values</td>";   
+  echo "<td style='width:15%'>Useful<br/>References</td></tr>";      
+    
+  $idTool = "";
+  
+  $i = 0;
+  foreach($arrayTools as $rowTool) {
+    $sameTool = $rowTool["IdTool"] . $rowTool["CodeCategory"]; // same tool but different categories will produce different rows in the table! It's the case one tool many categories...
+    if ($sameTool  == $idTool) {
+    }                            
+    else {            
+      if ($i > 0)     // not first cycle
+          echo  "</tr>";
+
+      prepareRow($rowTool);   
+      $idTool = $sameTool;         
+    }                
+    $i++;        
+  }  
   echo "</table></div>";
 }	
 
