@@ -2,7 +2,7 @@
 <img  src='images/dfte.evidence.logo.acronym.png' alt='EVIDENCE Project' border='0'></a> European Project<br/ -->
 <?php 
   // code catageory leaves without features: in these case the query can't contain tables tblFeatures and tblToolsFeatures. The last two values are for managing the case when no Category is selected (All value)
-    $codesLeavesNoFeatures= array("01.AN","01.02.AN","01.02.03.AN","01.03.AN","01.05.AN","02.AN","02.04.AN","02.05.AN","02.06.AN","03.01.AN","03.01.05.AN","03.01.06.AN","03.01.07.AN","03.02.AN","03.03.AN","07.AN","07.02.AN","08.AN","08.01.AN","08.02.AN","08.03.AN","01.AC","01.02.AC","01.05.AC","03.01.AC","03.01.06.AC","03.01.07.AC","03.02.AC","03.03.AC", "AN", "AC");
+    $codesLeavesNoFeatures= array("01.AN","01.02.AN","01.02.03.AN","01.03.AN","01.05.AN","02.AN","02.04.AN","02.05.AN","02.06.AN","03.AN","03.01.AN","03.01.05.AN","03.01.06.AN","03.01.07.AN","03.02.AN","03.03.AN","07.AN","07.02.AN","08.AN","08.01.AN","08.02.AN","08.03.AN","01.AC","01.02.AC","01.05.AC","03.AC","03.01.AC","03.01.06.AC","03.01.07.AC","03.02.AC","03.03.AC", "AN", "AC");
 
 	switch($dftRequest) {
 		case "query":	// query on Catalogue to identify the tool to be modified	
@@ -115,12 +115,11 @@ function ProcessQuery() {
     $valueFinalFilter = substr($valueFinalFilter, 0, -3);            
   }
     
-    
   if (strlen($valueFinalFilter) > 0) 
       $valueFinalFilter = " AND (" . $valueFinalFilter . ") ";  
 
   if (in_array($codeCategory . $process, $codesLeavesNoFeatures)) {    // weird case:  category without children, a leaf, and without features! 
-      //fwrite($debugFile, "category " . $codeCategory . " no features \n");
+    //fwrite($debugFile, "category " . $codeCategory . " no features \n");
     $qryToolsBase  = 'SELECT DISTINCT tblTools.IdTool, Tool, LicenseType, OperatingSystem, tblToolsCategories.Process, Developer, Description, Url, TestReport, ';
     $qryToolsBase .= 'Category, tblCategories.CodeCategory ';
     $qryToolsBase .= 'FROM tblTools, tblCategories, tblToolsCategories ';
