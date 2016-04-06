@@ -1,13 +1,12 @@
     <?php   
-    define("FILE_OUT_CATALOGUE", "dftc.boxsize2016.php");
     define("FILE_OUT_EDITOR", "config/dfte.features.panel.php");
     define("SPACE_FEATURE", 30);        // space taken by each check box of the  Feature in the Panel
-    define("SPACE_VALUE", 20);          // space taken by each couple of Values on the Features Panel
+    define("SPACE_VALUE", 25);          // space taken by each couple of Values on the Features Panel
     define("SPACE_HR", 25);             // space taken by <hr> for Features separator   
     define("SIZE_BASE", 50);            // default size Features Panel
 
     try {
-        $db_conn = new PDO('mysql:host=localhost;dbname=dftCatalogue2016;charset=utf8', 'sabato', 'umby97');
+        $db_conn = new PDO('mysql:host=localhost;dbname=dftCatalogue;charset=utf8', 'sabato', 'umby97');
         $db_conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } 
     catch (PDOException $e) {
@@ -17,14 +16,6 @@
 
     
     try{
-        $fCatalogue = fopen(FILE_OUT_CATALOGUE, "w");        
-    }
-    catch (Exception $e) {
-        echo "Could not open the Catalogue file";
-        exit; 
-    }
-
-    try{
         $fEditor = fopen(FILE_OUT_EDITOR, "w");        
     }
     catch (Exception $e) {
@@ -33,15 +24,12 @@
     }
 
       
-    fwrite($fCatalogue, "<?php \n");
     fwrite($fEditor, "<?php \n");
-    generateBox($fCatalogue, $fEditor, "AN");
-    generateBox($fCatalogue, $fEditor, "AC");
-    fwrite($fCatalogue, "?>\n");
+    generateBox($fEditor, "AN");
+    generateBox($fEditor, "AC");
     fwrite($fEditor, "?>\n");
 
-    fclose($fCatalogue);
-    fclose($fEditor);
+    close($fEditor);
 ?>    
 
 <?php 
@@ -52,7 +40,7 @@
 *                   $process: it assumes AN (Analysis) or AC (Acquisiton) 
 *
 */    
-function generateBox($fCat, $fEdit, $process) {
+function generateBox($fEdit, $process) {
     global $db_conn;
 
     $qryCategories  = "SELECT CodeCategory, Category FROM tblCategories WHERE Process='" . $process . "' ";
@@ -60,9 +48,7 @@ function generateBox($fCat, $fEdit, $process) {
     
     $rsCategories   = $db_conn->query($qryCategories);
     $nCategories    = $rsCategories->rowCount(); 
-    fwrite($fCat, "echo '<select class=dftHidden name=boxSizes" . $process . ">';\n");
     fwrite($fEdit, "echo '<select class=dftHidden name=boxSizes" . $process . ">';\n");
-    fwrite($fCat, "echo '<option value=" . SIZE_BASE . ">0</option>';\n");
     fwrite($fEdit, "echo '<option value=" . SIZE_BASE . ">0</option>';\n");
     
     for($i=0; $i<$nCategories; $i++) {
@@ -88,10 +74,8 @@ function generateBox($fCat, $fEdit, $process) {
 
         echo $rowCategory["CodeCategory"] . " - nF=" . $nFeatures . " - nV=" . $nValues .  "\n";
 
-        fwrite($fCat, "echo '<option value=" . $nValues . ">" . $rowCategory["CodeCategory"] . "</option>';\n");
         fwrite($fEdit, "echo '<option value=" . $nValues . ">" . $rowCategory["CodeCategory"] . "</option>';\n");
     }
-    fwrite($fCat, "echo '</select>';\n");
     fwrite($fEdit, "echo '</select>';\n");
 }
 ?>

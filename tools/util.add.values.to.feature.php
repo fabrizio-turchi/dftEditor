@@ -1,7 +1,7 @@
 <?php
 	
 	define("DB_HOST", "localhost");
-	define("DB_NAME", "dftCatalogue2016");
+	define("DB_NAME", "dftCatalogue");
 	define("DB_USER", "dft_uuCatalogue");
 	define("DB_PASS", "dft.88.ABx");
 

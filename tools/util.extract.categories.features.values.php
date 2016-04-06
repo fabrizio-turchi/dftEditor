@@ -36,10 +36,12 @@ $objPHPExcel->setActiveSheetIndex(0)
         echo "Could not connect to database";
     }
 
-    $process ='AC';
+    if (count($argv) < 2) {
+        echo "Error! Use: " . $argv[0] . " process (possible values AN or AC) \n\n";
+        exit;
+    }
+    $process = $argv[1];
     
-    if (isset($_GET["p"]))
-        $process = $_GET["p"];
 
     echo "<table width='100%'' border='1'>";
     $qryCategories  = "SELECT CodeCategory, Category FROM tblCategories WHERE Process='" . $process . "' ";
@@ -140,5 +142,5 @@ $objPHPExcel->setActiveSheetIndex(0)
     $objPHPExcel->getActiveSheet()->setTitle('DFT Catalogue');
     $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
     //$objWriter->save(str_replace('.php', '.xlsx', __FILE__));
-    $objWriter->save('dftc.Categories' . $process . '.xlsx');
+    $objWriter->save('dftc.Categories.' . $process . '.xlsx');
 ?>                
