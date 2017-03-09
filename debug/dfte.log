@@ -277,3 +277,16 @@
 20160312 - 1926 - qryBanned=SELECT CodeCategory FROM tblToolsCategories WHERE IdTool=134 AND CodeCategory <>"01.02.02." AND Process="AN"
 20160322 - 0822 - SELECT tblEditorTools.*, tblCategories.CodeCategory, Category, pastCodeCategory FROM tblEditorTools, tblEditorToolsCategories, tblCategories WHERE tblEditorTools.IdEditorTool = tblEditorToolsCategories.IdEditorTool AND tblEditorToolsCategories.CodeCategory = tblCategories.CodeCategory AND EditingStatus='Pending' ORDER BY EditingDate DESC
 20160322 - 0948 - SELECT tblEditorTools.*, tblCategories.CodeCategory, Category, pastCodeCategory FROM tblEditorTools, tblEditorToolsCategories, tblCategories WHERE tblEditorTools.IdEditorTool = tblEditorToolsCategories.IdEditorTool AND tblEditorToolsCategories.CodeCategory = tblCategories.CodeCategory AND EditingStatus='Pending' ORDER BY EditingDate DESC
+20170308 - 1451 - showModal begining
+20170308 - 1500 - showModal begining
+20170308 - 1502 - showModal begining
+20170308 - 1503 - showModal begining
+20170308 - 1505 - showModal begining
+20170308 - 1505 - showModal begining
+20170308 - 1513 - showModal begining
+20170308 - 1517 - showModal begining
+20170308 - 1520 - showModal begining
+20170308 - 1521 - showModal begining
+20170308 - 1521 - showModal begining
+20170308 - 1523 - showModal begining
+20170308 - 1524 - showModal begining

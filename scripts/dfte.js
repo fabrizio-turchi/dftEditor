@@ -892,4 +892,52 @@ $(function() {
 //    $(".dftTextRadio label").css("background-image","none");
   });  
 
+// function for opening a modal window with a message for the user after an action 
+// has teken place
+function initDialog (callbackClose) {
 
+    $( "#modal" ).dialog({
+        autoOpen: false
+    });
+    
+    $( "#modal" ).dialog({
+        modal: true
+    });
+
+/*
+    $( "#modal" ).dialog({
+        dialogClass: 'custom-ui-widget-header-warning'
+    });
+*/
+    $( "#modal" ).dialog({
+        buttons: [
+        {
+            text: "close",
+            class : "closeButton",
+            icons: {
+                primary: "ui-icon-circle-close" /* see https://api.jqueryui.com/theming/icons/ */
+            },
+            click: function() {
+                $( this ).dialog( "close" );
+            }
+      // Uncommenting the following line would hide the text,
+      // resulting in the label being used as a tooltip
+      //showText: false
+        }
+        ]
+    }); 
+
+
+/*
+*  javascript function to be called when the event close is triggered
+*/
+     $('#modal').on('dialogclose', function(event) {
+     eval(callbackClose + "();")
+ });
+
+}
+
+function openDialog () {
+    $('#modal').dialog();
+    $('#modal').dialog('open');
+}

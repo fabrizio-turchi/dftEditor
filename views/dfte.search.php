@@ -31,11 +31,8 @@
 <input name=editorIdTool class=dftHidden value="">
 <input name=editorSelectedCodeCategory class=dftHidden value="">
 
-<p class=dftPulsanti align=center>Forensics Tools Catalogue Editor (<a class=dftLink target="_blank" href=views/dfte.help.html
- title='Help on Catalogue Editing'>?</a>)<br/>
-<span class="button-wrap">
-<a href="javascript:EditNewTool()" title="Add a new tool" class="button button-pill ">+ Tool</a>
-</span>  
+<p class=dftPulsanti align=center>Forensics Tools Catalogue Editor (<a class=dftLink target="_blank" href=views/dfte.help.html title='Help on Catalogue Editing'>Help?</a>)<br/>
+ 
 <hr/>
 <?php
   if ($process == 'AN') {
@@ -71,12 +68,10 @@
    $rsTools	     = $db_conn->query($qryTools);
    $nToolsAC = $rsTools->rowCount();
  
-  echo "<tr class=dftText><td class=dftEnfasi5 >Total tools: ";
-  echo "<input class=dftEnfasi2 type=text name=totalTools readonly size=5 value=" . $nToolsAN . ">"; 
-  echo "&nbsp;&nbsp;<span class=dftText>Select  criteria and  </span>";
-  echo '<span class="button-wrap">';
-  echo '<a href="javascript:Search()" title="Get tools on selected search criteria" class="button button-pill ">Search</a></td></tr>';
-  echo '</span>';
+  echo "<tr class=dftText><td class=dftEnfasi5>Total tools: ";
+  echo "<input class=dftEnfasi2 type=text name=totalTools readonly size=5 value=" . $nToolsAN; 
+  echo "></td></tr>";
+
   echo "<tr><td>&nbsp;</td></tr>";
   echo '<tr class=dftText align=center><td>';
   echo '<div id="radio">';
@@ -94,6 +89,8 @@
   echo "<tr class='dftText'>";
   showLicenseType($license, "license", "<br/>");
   echo "</tr>";
+
+  echo "<tr><td>&nbsp;</td></tr>";
     
   
   echo "<input name=Category class=dftHidden value=''> "; 
@@ -158,8 +155,15 @@
   echo "<tr class='dftText'>";
   showOperatingSystem($os, "os", "<br/>");
   echo "</tr>";
-
-  //echo "<tr><td>&nbsp;</td></tr>";
+  echo "<tr><td>&nbsp;</td></tr>";
+  echo "<tr><td>";
+  echo "<span class=dftTextGrassetto>Select  criteria and  ";
+  echo '<span class="button-wrap">';
+  echo '<a href="javascript:Search()" title="Get tools on selected search criteria" class="button button-pill ">Search</a></span>';
+  echo '&nbsp;&nbsp;or&nbsp;&nbsp;</span>';
+  echo '<span class="button-wrap">';
+  echo '<a href="javascript:EditNewTool()" title="Add a new tool" class="button button-pill ">+ Tool</a></span></td></tr>';
+  echo "<tr><td>&nbsp;</td></tr>";
   
   require_once("config/dfte.features.panel.php");
 

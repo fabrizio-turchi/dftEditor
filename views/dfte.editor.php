@@ -526,11 +526,11 @@ function EditTool($idTool, $status) {
       break;
 
   	case  "afterUpdating":
-      echo "<p class=dftCommit>Updating completed!</p>";
+      //echo "<p class=dftCommit>Updating completed!</p>";     
       break;
 
     case  "afterInsert":
-      echo "<p class=dftCommit>Insert completed!</p>";
+      //echo "<p class=dftCommit>Insert completed!</p>";
       break;
   }
   echo "<br/>";
@@ -860,13 +860,15 @@ function UpdateTool($idTool, $operation) {
   echo "<input type=hidden name=editorIdToolCommitted value='" . $idRecord . "'>";
   switch($operation) {
     case "U":
-      echo "<script>window.alert('" . "Update complete!');</script>";                            
-      echo "<script>CommitUpdatingTool();</script>";
+      //echo "<script>window.alert('" . "Update complete!');</script>"; 
+      showModal("Update action", "Update completed! Thanks.", "CommitUpdatingTool");
+      //echo "<script>CommitUpdatingTool();</script>";
       break;
 
     case "I":
-      echo "<script>window.alert('" . "Insert complete!');</script>";                            
-      echo "<script>AddedTool();</script>";
+      //echo "<script>window.alert('" . "Insert complete!');<script>";                            
+      showModal("Insertion action", "Insertion completed! Thanks.", "AddedTool");
+      //echo "<script>AddedTool();</script>";
       break;
 
     case "":
@@ -2090,7 +2092,14 @@ function setJavascriptField($field, $value) {
   echo "<script>document.frmSearch." . $field . ".value=" . $value . ";</script>" ;
 }
 
-  
+function showModal($title, $content, $jsFunction) {
+  echo '<div id="modal" title="' . $title . '">';
+  echo '<p>' . $content . '</p>';
+  echo '</div>';
+  //showAlert($jsFunction);
+  echo '<script>initDialog("' . $jsFunction . '");</script>';
+  echo "<script>openDialog();</script>";
+}
 
 function writeLog($msg) {
   date_default_timezone_set('Europe/Rome');
@@ -2103,5 +2112,9 @@ function writeLog($msg) {
   fwrite($debugFile, date("Ymd") . " - " . date("Hi") . " - " . $msg . "\n");
 
   fclose($debugFile);   
+}
+
+function showAlert($content) {
+  echo '<script>window.alert("showAlert:---> ' . $content . '");</script>';
 }
 ?>

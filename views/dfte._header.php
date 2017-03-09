@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="./scripts/base.css" type="text/css" />
 <link rel="stylesheet" href="./scripts/jquery-ui.css" type="text/css" />
 <link rel="stylesheet" href="./scripts/font-awesome.css" type="text/css" />
-<link rel="stylesheet" href="./scripts/buttons.css" type="text/css" />
+<link rel="stylesheet" href="./scripts/buttons.css" type="text/css">
 <script type="text/javascript" src="./scripts/jquery-1.11.1.js"></script>
 <script type="text/javascript" src="./scripts/jquery-ui.js"></script>
 <script type="text/javascript" src="./scripts/buttons.js"></script>
@@ -15,6 +15,7 @@
 <link rel="stylesheet" type="text/css" href="scripts/tooltipster.css" />
 <script type="text/javascript" src="scripts/jquery.tooltipster.min.js"></script>
 <link rel="stylesheet" type="text/css" href="scripts/themes/tooltipster-light.css" />
+<script type="text/javascript" src="./scripts/jquery.modal.js"></script>
 <script>
     $(document).ready(function() {
         $('.tooltip').tooltipster({

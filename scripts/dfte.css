@@ -1,5 +1,105 @@
 option.mainOption { font-weight : bold; }
 
+form select{
+	border:2px solid #d2dae1;
+}
+form input[type='text'], form select, form textarea {
+    border: 2px solid #d2dae1;
+}
+form input[name='editorToolType'] {
+    padding-left:5px;
+}
+input:hover {
+ cursor:pointer;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari + altri chromium */
+   padding-left:5px;
+}
+::-moz-placeholder { /* Firefox 19 e superiori */
+   padding-left:5px;
+}
+:-ms-input-placeholder { /* IE 10 e superiori */
+   padding-left:5px;
+}
+:-moz-placeholder { /* Firefox 18 e inferiori */
+  padding-left:5px;
+}
+select[size]{
+height:70px;
+}
+input[class="dftEnfasi2"] {
+	padding-left:5px
+}
+#editor tr.dftTextGrassetto {
+	background: rgba(217, 51, 26, 0.85);
+}
+form[name="frmSearch"] #editor #tblTools tr.dftText {
+	background: rgba(230, 72, 49, 0.16);
+}
+form[name="frmSearch"] #editor #tblTools tr:hover.dftText {
+	background: rgba(217, 51, 26, 0.41);
+}
+form[name="frmSearch"] #editor #tblTools tr.dftText td {
+	padding:5px
+}
+form[name="frmSearch"] #editor #tblTools tr:nth-child(even) {
+	background-color: #eaeaea;
+}
+#editor #tblTools tr.dftText td {
+	border:2px;
+	padding:2px;
+}
+#editor table {
+    border-spacing: 2px;
+    border-color: grey;
+}
+select {
+	height:24px;
+	border:2px solid #d2dae1;
+	border-radius:4px;
+	margin-top:4px
+}
+
+input[type='button']:hover {
+                background-color:#ffcc00;
+                border:1px solid #ffcc00;
+}
+
+input[type='button'] {
+                background-color:gold;
+                border-radius:4px;
+                border:1px solid gold;
+                box-shadow: 2px 1px 7px #888888;
+                font-weight:700;
+                height:32px;
+                padding: 0px 15px;
+                color:#292929;
+}
+
+
+input[type='submit'] {
+                background-color:gold;
+                border-radius:4px;
+                border:1px solid gold;
+                box-shadow: 2px 1px 7px #888888;
+                font-weight:700;
+                height:32px;
+                padding: 0px 15px;
+                color:#292929;
+}
+input[type='submit']:hover {
+                background-color:#ffcc00;
+                border:1px solid #ffcc00;
+}
+
+input {
+	height:24px;
+	border:2px solid #d2dae1;
+	border-radius:4px;
+	margin-top:4px;
+	max-width:360px;
+}
+
 #containerEditor {
 	width: 100%;
 	height: 100%;
@@ -35,7 +135,7 @@ option.mainOption { font-weight : bold; }
 	left:32%;
 	overflow: scroll;
 	vertical-align: top;
-}  
+}
 
 .success-notice {
     padding-left: 10px;
@@ -90,7 +190,7 @@ ul li {
 	height:220px;
 	/*background-color:gold;*/
 	/*background-color:#DAB5A4;*/
-	background-color:#E2A96F;
+	background-color:rgba(230, 72, 49, 0.56);
 	border:1px solid #666666;
 	display:none;
 	position: relative;
@@ -110,8 +210,8 @@ ul li {
 	width:350px;
 	height:130px;
 	/*background-color:gold;*/
-	/*background-color:#DAB5A4;*/
-	background-color:#99C68E;
+	/*background-color:rgba(230, 72, 49, 0.56);*/
+	background-color:rgb(204, 192, 154);
 	border:1px solid #254117;
 	display:none;
 	position: relative;
@@ -127,10 +227,39 @@ ul li {
   font-weight: bold;
 }
 
-.dft {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: xx-small; font-style: normal; font-weight: bold; color: #000000; line-height: normal; white-space: normal; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px}
-.dftPulsanti {  font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; line-height: normal; font-weight: bold; color: #666666}
-.dftNERO { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: xx-small; font-style: normal; font-weight: bold; color: #000000}
-.dftText { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: x-small; font-style: normal; font-weight: normal; color: #000000 }
+.dft {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: xx-small;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+  line-height: normal;
+  white-space: normal;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px
+}
+.dftPulsanti {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  font-style: normal;
+  line-height: normal;
+  font-weight: bold;
+  color: #666666
+}
+.dftNERO {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: xx-small;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000
+}
+.dftText {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size:12px;
+  color: #000000
+}
 .dftTextRidotto { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: xx-small; font-style: normal; font-weight: normal; color: #000000 }
 .dftTextRidottoGrassetto { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: xx-small; font-style: normal; font-weight: bold; color: #000000 }
 .dftTextRidottoFisso { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 7pt; font-style: normal; font-weight: normal; color: #000000 }
@@ -140,13 +269,13 @@ ul li {
 .dftRicerca { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: xx-small; font-style: normal; font-weight: bold; color: #003300}
 .dftRicercaBIG { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-weight: bold; color: #FF0000}
 /*a:hover { color: 493D26; text-decoration: underline;}*/
-a:link {  font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; font-size: x-small; 
+a:link {  font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; font-size: x-small;
 	color: #C11B17; text-decoration: none;}
 a:hover, a:focus {
   text-decoration: underline; }
 a:visited {  text-decoration: none}
 
-/*td>a:link {  font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; font-size: x-small; 
+/*td>a:link {  font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; font-size: x-small;
 	color: white; text-decoration: none;}
 td>a:hover { color: green; text-decoration: underline; }
 td>a:focus { color: #C11B17; text-decoration: underline; } */
@@ -163,7 +292,13 @@ td>a:focus { color: #C11B17; text-decoration: underline; } */
 .tabs {  border: 0px dashed; border-color: #FF0000 black #FF9900 #999999; background-image: url(imm/puntini.gif); background-repeat: repeat; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: xx-small; font-style: normal; font-weight: bold; color: #000000; line-height: normal; text-decoration: none}
 .pallino {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: xx-small; color: #FF9900}
 .casellatitolo {  background-attachment: fixed; font-size: x-small; text-align: justify; font-family: Verdana, Arial, Helvetica, sans-serif; color: #000000}
-.dftTextGrassetto { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: x-small; font-style: normal; font-weight: bold; color: #000000 }
+.dftTextGrassetto {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000
+  font-size: 13px;
+}
 .dftTextRadio { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: x-small; font-style: normal; font-weight: bold; color: #000000 }
 .dftButtons { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: small; font-style: normal; font-weight: bold; color: #000000 }
 .dftTextGrassettoBig { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: small; font-style: normal; font-weight: bold; color: #000000 }
@@ -174,7 +309,7 @@ td>a:focus { color: #C11B17; text-decoration: underline; } */
 .dftEnfasi2 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; font-size: x-small; color: #663300}
 .dftEnfasi3 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; font-size: x-small; color: #663366}
 .dftEnfasi4 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; font-size: x-small; color: #FFCC00}
-.dftEnfasi5 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; font-size: x-small; color: #CC6600}
+.dftEnfasi5 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; font-size: x-small; color: #c22d18}
 .dftEnfasi6 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; font-size: x-small; color: red}
 .dftCommit {  font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; font-size: medium; color: #990012;}
 .dftError {  font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; font-size: small; color: red}
@@ -186,3 +321,60 @@ td>a:focus { color: #C11B17; text-decoration: underline; } */
 .dftTextCellaScura { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: x-small; font-style: normal; font-weight: bold; color: #000000; background-color:#999999}
 .tocs {  font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; font-size: x-small; color: #990000}
 .dftMoodOn {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 0px; font-style: normal; font-weight: bold; color: #000000; line-height: normal; white-space: normal; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px}
+
+/*
+* redifinition of classes in jquery-ui.css in order to cistomize dialog windows
+*/
+.ui-widget-header {
+  border: 0px solid #282626;
+  background-color: #C22D18;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.ui-widget-content {
+  /*border: 1px solid #dddddd;*/
+  border: 5px solid #c22d18;
+  color: #000000;
+  padding: 10px;
+}
+
+.ui-button {
+  display: inline-block;
+  position: relative;
+  padding: 0;
+  line-height: 0em;
+  margin-right: .1em;
+  cursor: pointer;
+  vertical-align: middle;
+  text-align: center;
+  overflow: visible; /* removes extra width in IE */
+}
+
+.ui-button .ui-button-text {
+  display: block;
+  line-height: 2.0em;
+}
+
+.ui-button.closeButton {
+    border: 1px solid #aaaaaa
+    /*{borderColorContent}*/
+    ;
+    color: #8E8E8E;
+    /*{fcContent}*/
+}
+
+.ui-state-active .ui-icon {
+  background-image: url("images/ui-icons_454545_256x240.png");
+}
+
+.ui-state-default .ui-icon {
+  background-image: url("images/ui-icons_454545_256x240.png");
+}
+.ui-state-hover .ui-icon,
+.ui-state-focus .ui-icon {
+  background-image: url("images/ui-icons_454545_256x240.png");
+}
+.ui-state-active .ui-icon {
+  background-image: url("images/ui-icons_454545_256x240.png");
+}

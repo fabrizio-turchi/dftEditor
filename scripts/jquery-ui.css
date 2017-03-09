@@ -392,7 +392,8 @@ button.ui-button::-moz-focus-inner {
 	position: absolute;
 	top: 0;
 	left: 0;
-	padding: .2em;
+	/*padding: .2em;*/
+	padding: 0;
 	outline: 0;
 }
 .ui-dialog .ui-dialog-titlebar {
@@ -419,7 +420,8 @@ button.ui-button::-moz-focus-inner {
 .ui-dialog .ui-dialog-content {
 	position: relative;
 	border: 0;
-	padding: .5em 1em;
+	/*padding: .5em 1em;*/
+	padding: 0;
 	background: none;
 	overflow: auto;
 }
@@ -841,19 +843,21 @@ body .ui-tooltip {
 .ui-widget textarea,
 .ui-widget button {
 	font-family: Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
-	font-size: 1em;
+	font-size: 3.0em;
 }
 .ui-widget-content {
-	border: 1px solid #dddddd;
+	/*border: 1px solid #dddddd;*/
+	border: 1px solid #CC99FF;
 	background: #eeeeee url("images/ui-bg_highlight-soft_100_eeeeee_1x100.png") 50% top repeat-x;
-	color: #333333;
+	/*color: #333333;*/
+	color: #c22d18;
 }
 .ui-widget-content a {
 	color: #333333;
 }
 .ui-widget-header {
 	border: 1px solid #e78f08;
-	background: #f6a828 url("images/ui-bg_gloss-wave_35_f6a828_500x100.png") 50% 50% repeat-x;
+	/*background: #f6a828 url("images/ui-bg_gloss-wave_35_f6a828_500x100.png") 50% 50% repeat-x;*/
 	color: #ffffff;
 	font-weight: bold;
 }
